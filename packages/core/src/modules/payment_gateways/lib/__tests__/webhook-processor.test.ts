@@ -7,8 +7,8 @@ import {
 } from '@open-mercato/shared/modules/payment_gateways/types'
 import { markQueueJobOrigin } from '@open-mercato/shared/lib/queue/dispatchOrigin'
 import { processPaymentGatewayWebhookJob } from '../webhook-processor'
-import type { IntegrationLogService } from '../../integrations/log-service'
-import type { PaymentGatewayService } from './gateway-service'
+import type { IntegrationLogService } from '../../../integrations/lib/log-service'
+import type { PaymentGatewayService } from '../gateway-service'
 
 jest.mock('../webhook-utils', () => ({
   claimWebhookProcessing: jest.fn(async () => true),

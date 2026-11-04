@@ -2,8 +2,8 @@
 import { describe, it, expect, jest } from '@jest/globals'
 import { processPaymentGatewayWebhookJob } from '../webhook-processor'
 import { markQueueJobOrigin } from '@open-mercato/shared/lib/queue/dispatchOrigin'
-import type { IntegrationLogService } from '../../integrations/log-service'
-import type { PaymentGatewayService } from './gateway-service'
+import type { IntegrationLogService } from '../../../integrations/lib/log-service'
+import type { PaymentGatewayService } from '../gateway-service'
 
 /**
  * Regression guard for the dispatch-origin envelope (#5213 review M1): the
