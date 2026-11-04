@@ -18,8 +18,8 @@
 import type { EntityManager } from '@mikro-orm/postgresql'
 import { findWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import { Attachment } from '@open-mercato/core/modules/attachments/data/entities'
-import type { AiAgentDefinition } from './ai-agent-definition'
-import type { AiToolDefinition, McpToolContext } from './types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { AiPendingAction } from '../data/entities'
 import type {
   AiPendingActionFailedRecord,
@@ -29,7 +29,7 @@ import type {
 import { resolveEffectiveMutationPolicy } from './agent-policy'
 import { hasRequiredFeatures } from './auth'
 import { resolveToolFeaturesDeniedMessage } from './pending-action-messages'
-import type { AiAgentMutationPolicy } from './ai-agent-definition'
+import type { AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { planPendingActionExecution, resolvePendingActionBatchMessages } from './pending-action-batch'
 
 export type PendingActionRecheckCode =

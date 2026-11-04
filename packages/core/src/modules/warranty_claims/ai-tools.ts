@@ -19,7 +19,7 @@ import {
   isWarrantyAiNotConfiguredError,
   isWarrantyAiUnavailableError,
 } from './lib/aiAssist'
-import type { AiChatRequestContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/attachment-bridge-types'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import type { AuthContext } from '@open-mercato/shared/lib/auth/server'
 import type { AttachmentTargetAccessService } from '@open-mercato/core/modules/attachments/lib/target-access-service'
 import { buildWarrantyClaimTriageSuggestion } from './lib/triage'

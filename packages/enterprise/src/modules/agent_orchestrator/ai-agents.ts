@@ -1,4 +1,4 @@
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 // Import skills FIRST so `defineSkill` has populated the registry before any
 // `defineAgent` below resolves its declared `skills`.
 import './ai-skills'

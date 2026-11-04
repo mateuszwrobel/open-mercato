@@ -7,7 +7,7 @@
  * open (warn + fall through) without failing the chat turn.
  */
 
-import type { AiAgentDefinition } from '../ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 const streamTextMock = jest.fn()
 const convertToModelMessagesMock = jest.fn((messages: unknown) => messages)

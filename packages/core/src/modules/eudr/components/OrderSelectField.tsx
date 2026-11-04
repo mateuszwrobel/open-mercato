@@ -3,13 +3,8 @@
 import * as React from 'react'
 import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { apiCall } from '@open-mercato/ui/backend/utils/apiCall'
-import {
-  LookupSelectField,
-  PICKER_PAGE_SIZE,
-  type OrderSnapshot,
-  type PickerOption,
-  type Translator,
-} from './formConfig'
+import { LookupSelectField, PICKER_PAGE_SIZE } from './LookupSelectField'
+import type { OrderSnapshot, PickerOption, Translator } from './types'
 
 type PickerPayload = {
   items?: unknown[]

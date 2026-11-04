@@ -1,8 +1,8 @@
 import { z } from 'zod'
 import type { AwilixContainer } from 'awilix'
 import { executePendingActionConfirm } from '../pending-action-executor'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition, McpToolContext } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { AiPendingAction } from '../../data/entities'
 
 const P1 = '11111111-1111-4111-8111-111111111111'

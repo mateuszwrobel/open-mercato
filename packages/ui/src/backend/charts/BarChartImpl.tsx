@@ -12,7 +12,7 @@ import {
   ResponsiveContainer,
 } from 'recharts'
 import { ChartTooltipContent, resolveChartColor } from './ChartUtils'
-import type { BarChartDataItem, BarChartProps } from './BarChart'
+import type { BarChartDataItem, BarChartProps } from './types'
 
 type ImplProps = Pick<
   BarChartProps,

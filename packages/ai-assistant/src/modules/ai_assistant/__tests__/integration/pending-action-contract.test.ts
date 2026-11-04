@@ -22,7 +22,7 @@
 import { z } from 'zod'
 import type { AwilixContainer } from 'awilix'
 import type { AiPendingAction } from '../../data/entities'
-import type { AiAgentDefinition } from '../../lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type {
   AiPendingActionExecutionResult,
   AiPendingActionFailedRecord,
@@ -33,7 +33,7 @@ import {
   AI_PENDING_ACTION_ALLOWED_TRANSITIONS,
   AiPendingActionStateError,
 } from '../../lib/pending-action-types'
-import type { AiToolDefinition, McpToolContext } from '../../lib/types'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import {
   executePendingActionConfirm,
   PENDING_ACTION_CONFIRMED_EVENT_ID,

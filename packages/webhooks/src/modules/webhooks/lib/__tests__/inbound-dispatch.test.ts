@@ -2,7 +2,7 @@ import type { EntityManager } from '@mikro-orm/postgresql'
 import type { WebhookHandlerContext, WebhookHandlerPayload } from '@open-mercato/shared/lib/webhooks'
 
 const findOneWithDecryption = jest.fn()
-const emitWebhooksEvent = jest.fn(async () => undefined)
+const emitWebhooksEvent = jest.fn(async (..._args: unknown[]) => undefined)
 
 jest.mock('@open-mercato/shared/lib/encryption/find', () => ({
   findOneWithDecryption: (...args: unknown[]) => findOneWithDecryption(...args),

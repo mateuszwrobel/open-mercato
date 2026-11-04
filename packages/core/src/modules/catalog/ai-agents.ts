@@ -30,7 +30,7 @@
 import type {
   AiAgentDefinition,
   AiAgentPageContextInput,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import {
   hydrateCatalogAssistantContext,
   hydrateMerchandisingAssistantContext,

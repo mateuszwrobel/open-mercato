@@ -8,7 +8,7 @@ import {
   composeToolOverrideMap,
   type AiToolOverrideConfigEntry,
 } from './ai-overrides'
-import type { McpToolDefinition, McpToolContext } from './types'
+import type { McpToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { ToolSearchService } from './tool-search'
 import {
   findGeneratedFile,

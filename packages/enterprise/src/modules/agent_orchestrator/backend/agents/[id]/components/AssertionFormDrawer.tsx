@@ -23,7 +23,7 @@ import { useT } from '@open-mercato/shared/lib/i18n/context'
 // score bodies, PII regexes) never enters the client bundle. Descriptors arrive at
 // runtime from GET /eval-scorers.
 import type { ScorerDescriptor, ScorerField } from '../../../../lib/eval/types'
-import type { AssertionRow } from './EvaluationTab'
+import type { AssertionRow } from '../../../../components/evalRunTypes'
 
 /** Namespaced so two scorers can expose a field of the same name. */
 const CONFIG_FIELD_PREFIX = 'cfg__'

@@ -1,7 +1,7 @@
 import { NextRequest } from 'next/server'
 import { z } from 'zod'
 import { registerMcpTool, toolRegistry } from '../../../../lib/tool-registry'
-import type { AiToolDefinition } from '../../../../lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import enTranslations from '../../../../i18n/en.json'
 import { POST, metadata } from '../route'
 

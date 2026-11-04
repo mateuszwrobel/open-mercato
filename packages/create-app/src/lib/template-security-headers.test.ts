@@ -7,7 +7,11 @@ import {
   PHASE_PRODUCTION_SERVER,
 } from 'next/constants'
 
-import resolveMainAppConfig from '../../../../apps/mercato/next.config'
+// Computed specifier: this parity audit executes the app's Next config on
+// purpose, but must not become a static module edge into the app workspace
+// (the graph target would demand a manifest dependency create-app cannot have;
+// see scripts/archspec/gen-intended-spec.mjs).
+const { default: resolveMainAppConfig } = await import(new URL('../../../../apps/mercato/next.config', import.meta.url).href)
 import resolveTemplateConfig from '../../template/next.config'
 
 async function resolveHeaders(resolveConfig: typeof resolveMainAppConfig, phase: string) {

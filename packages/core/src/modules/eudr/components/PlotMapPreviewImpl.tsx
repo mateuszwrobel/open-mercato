@@ -4,7 +4,7 @@ import * as React from 'react'
 import * as L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import type { GeoJsonObject } from 'geojson'
-import type { PlotMapPreviewProps } from './PlotMapPreview'
+import type { PlotMapPreviewProps } from './types'
 
 const leafletRuntime = ((L as { default?: typeof L }).default ?? L) as typeof L
 

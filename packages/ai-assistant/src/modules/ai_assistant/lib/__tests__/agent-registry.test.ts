@@ -1,4 +1,4 @@
-import type { AiAgentDefinition } from '../ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import {
   applyAgentExtensionEntriesForTests,
   getAgent,

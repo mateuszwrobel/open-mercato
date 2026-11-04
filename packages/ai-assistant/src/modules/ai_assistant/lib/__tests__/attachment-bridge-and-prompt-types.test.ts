@@ -3,7 +3,7 @@ import type {
   AiUiPart,
   AiChatRequestContext,
   AttachmentSource,
-} from '../attachment-bridge-types'
+} from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import {
   definePromptTemplate,
   type PromptSection,

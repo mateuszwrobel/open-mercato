@@ -2,7 +2,12 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import test from 'node:test'
-import { TEMPLATE_ONLY_RELATIVE_FILES } from '../../../../scripts/template-sync.ts'
+// Computed specifier: this repo-wide audit reads root tooling on purpose,
+// but must not become a static module edge (repo-root is not a dependency
+// target for the architecture graph; see scripts/archspec/gen-intended-spec.mjs).
+const { TEMPLATE_ONLY_RELATIVE_FILES } = (await import(new URL('../../../../scripts/template-sync.ts', import.meta.url).href)) as {
+  TEMPLATE_ONLY_RELATIVE_FILES: readonly string[]
+}
 
 const templateRoot = resolve(import.meta.dirname, '../../template')
 const appSrcRoot = resolve(import.meta.dirname, '../../../../apps/mercato/src')

@@ -7,8 +7,8 @@
  * Step brief.
  */
 
-import type { AiAgentAcceptedMediaType } from '../ai-agent-definition'
-import type { AiChatRequestContext } from '../attachment-bridge-types'
+import type { AiAgentAcceptedMediaType } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 
 const findOneWithDecryptionMock = jest.fn()
 
@@ -47,7 +47,7 @@ import {
   attachmentPartsToUiFileParts,
   summarizeAttachmentPartsForPrompt,
   type AttachmentSigner,
-} from '../attachment-parts'
+} from '@open-mercato/core/lib/ai/attachment-parts'
 
 jest.mock('@open-mercato/shared/lib/logger', () => {
   const mocked = {

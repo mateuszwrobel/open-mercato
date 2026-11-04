@@ -76,11 +76,11 @@ const layerName = {
 const ids = new Map()
 let n = 0
 const id = (p) => (ids.has(p) ? ids.get(p) : (ids.set(p, `p${++n}`), `p${++n}`))
-for (const p of [...nodeSet].sort()) id(p)
+for (const p of [...nodeSet].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))) id(p)
 
 const linkLines = []
 const classified = []
-for (const [key, r] of [...edges.entries()].sort()) {
+for (const [key, r] of [...edges.entries()].sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))) {
   const [a, b] = key.split('|')
   if (!nodeSet.has(a) || !nodeSet.has(b)) continue
   const forbidden = FORBIDDEN.has(key)
@@ -97,7 +97,7 @@ lines.push('---')
 lines.push('graph LR')
 
 const byRank = new Map()
-for (const p of [...nodeSet].sort()) {
+for (const p of [...nodeSet].sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))) {
   const r = rank(p)
   if (!byRank.has(r)) byRank.set(r, [])
   byRank.get(r).push(p)

@@ -1,4 +1,4 @@
-import type { CacheStrategy } from '@open-mercato/cache'
+import type { CacheStrategy } from './types'
 
 export type CacheSegmentAnalysisOptions = {
   keysPattern: string

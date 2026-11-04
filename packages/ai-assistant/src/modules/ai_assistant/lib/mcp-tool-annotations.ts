@@ -1,4 +1,4 @@
-import type { AiToolDefinition, McpToolAnnotations, McpToolDefinition } from './types'
+import type { AiToolDefinition, McpToolAnnotations, McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 /**
  * Build the MCP annotations advertised for a registered tool.

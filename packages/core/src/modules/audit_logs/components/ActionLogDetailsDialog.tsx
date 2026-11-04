@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import { X } from 'lucide-react'
 import { Button } from '@open-mercato/ui/primitives/button'
 import { useT } from '@open-mercato/shared/lib/i18n/context'
-import type { ActionLogItem } from './AuditLogsActions'
+import type { ActionLogItem } from './types'
 import {
   ChangedFieldsTable,
   CollapsibleJsonSection,

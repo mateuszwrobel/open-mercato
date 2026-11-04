@@ -105,7 +105,7 @@ export interface AiToolFieldDiffDisplayHints {
  *
  * @example
  * ```typescript
- * import type { AiToolDefinition } from '@open-mercato/ai-assistant'
+ * import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
  *
  * export const aiTools: AiToolDefinition[] = [...]
  * ```

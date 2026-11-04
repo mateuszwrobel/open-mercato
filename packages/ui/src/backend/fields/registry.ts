@@ -39,7 +39,7 @@ export const FieldRegistry = new FieldRegistryImpl()
 export async function loadGeneratedFieldRegistrations(): Promise<void> {
   try {
     const gen = await import('./registry.generated')
-    if (typeof gen.loadAll === 'function') gen.loadAll()
+    if (typeof gen.loadAll === 'function') await gen.loadAll()
   } catch {
     // ignore when not present
   }

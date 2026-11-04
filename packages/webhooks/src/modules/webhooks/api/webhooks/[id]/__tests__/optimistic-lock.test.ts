@@ -22,11 +22,11 @@ const webhookRecord = {
 }
 
 const mockEm = {
-  fork: jest.fn(() => mockEm),
+  fork: jest.fn((): unknown => mockEm),
   flush: jest.fn(async () => undefined),
 }
 
-const mockEmitWebhooksEvent = jest.fn(async () => undefined)
+const mockEmitWebhooksEvent = jest.fn(async (..._args: unknown[]) => undefined)
 
 // Optional enterprise command-guard service the async seam resolves from the
 // request container. `null` = OSS-only build (container.resolve throws); a value

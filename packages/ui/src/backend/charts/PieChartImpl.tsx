@@ -11,7 +11,7 @@ import {
   Label,
 } from 'recharts'
 import { ChartTooltipContent, resolveChartColor } from './ChartUtils'
-import type { PieChartProps } from './PieChart'
+import type { PieChartProps } from './types'
 
 type ImplProps = Pick<
   PieChartProps,

@@ -12,22 +12,25 @@
  * raw mutating apiCall.
  */
 import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { join, resolve } from 'node:path'
 
 const componentsDir = join(__dirname, '..')
+// DictionarySelectControl moved to the ui package (ui owns the shared
+// dictionary select UI); keep auditing the same guarded-mutation invariants.
+const uiDictionariesDir = resolve(__dirname, '../../../../../../', 'ui/src/backend/dictionaries/components')
 
 const WRITE_COMPONENTS = [
-  'DictionariesManager.tsx',
-  'DictionaryEntriesEditor.tsx',
-  'DictionarySelectControl.tsx',
+  { label: 'DictionariesManager.tsx', file: join(componentsDir, 'DictionariesManager.tsx') },
+  { label: 'DictionaryEntriesEditor.tsx', file: join(componentsDir, 'DictionaryEntriesEditor.tsx') },
+  { label: 'DictionarySelectControl.tsx', file: join(uiDictionariesDir, 'DictionarySelectControl.tsx') },
 ] as const
 
 function read(file: string): string {
-  return readFileSync(join(componentsDir, file), 'utf8')
+  return readFileSync(file, 'utf8')
 }
 
 describe('dictionaries write components — guarded mutation wiring (#3219)', () => {
-  it.each(WRITE_COMPONENTS)('%s imports and uses useGuardedMutation', (file) => {
+  it.each(WRITE_COMPONENTS)('$label imports and uses useGuardedMutation', ({ file }) => {
     const source = read(file)
     expect(source).toContain(
       "from '@open-mercato/ui/backend/injection/useGuardedMutation'",
@@ -38,8 +41,8 @@ describe('dictionaries write components — guarded mutation wiring (#3219)', ()
   })
 
   it.each(WRITE_COMPONENTS)(
-    '%s routes every mutating apiCall through a runMutation operation',
-    (file) => {
+    '$label routes every mutating apiCall through a runMutation operation',
+    ({ file }) => {
       const source = read(file)
       const mutatingApiCalls =
         source.match(/method:\s*['"](POST|PUT|PATCH|DELETE)['"]/g) ?? []
@@ -52,14 +55,14 @@ describe('dictionaries write components — guarded mutation wiring (#3219)', ()
   )
 
   it('DictionariesManager still derives the optimistic-lock header for update and delete', () => {
-    const source = read('DictionariesManager.tsx')
+    const source = read(join(componentsDir, 'DictionariesManager.tsx'))
     expect(source).toContain('buildOptimisticLockHeader')
     expect(source).toContain('withScopedApiRequestHeaders')
     expect(source).toContain('surfaceRecordConflict')
   })
 
   it('DictionaryEntriesEditor still derives the optimistic-lock header for update and delete', () => {
-    const source = read('DictionaryEntriesEditor.tsx')
+    const source = read(join(componentsDir, 'DictionaryEntriesEditor.tsx'))
     expect(source).toContain('buildOptimisticLockHeader')
     expect(source).toContain('withScopedApiRequestHeaders')
     expect(source).toContain('surfaceRecordConflict')

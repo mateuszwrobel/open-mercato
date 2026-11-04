@@ -1,15 +1,15 @@
 import { z } from 'zod'
-import { defineApiBackedAiTool } from '../api-backed-tool'
+import { defineApiBackedAiTool } from '@open-mercato/core/lib/ai/api-backed-tool'
 import {
   createAiApiOperationRunner,
   type AiApiOperationRequest,
   type AiApiOperationResponse,
   type AiToolExecutionContext,
-} from '../ai-api-operation-runner'
-import type { AiToolDefinition, McpToolContext } from '../types'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 
-jest.mock('../ai-api-operation-runner', () => {
-  const actual = jest.requireActual('../ai-api-operation-runner')
+jest.mock('@open-mercato/core/lib/ai/ai-api-operation-runner', () => {
+  const actual = jest.requireActual('@open-mercato/core/lib/ai/ai-api-operation-runner')
   return {
     ...actual,
     createAiApiOperationRunner: jest.fn(),

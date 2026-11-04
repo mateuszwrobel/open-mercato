@@ -21,7 +21,7 @@ jest.mock('ai', () => {
   }
 })
 
-import type { AiAgentDefinition, AiAgentLoopConfig } from '../ai-agent-definition'
+import type { AiAgentDefinition, AiAgentLoopConfig } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import {
   resolveEffectiveLoopConfig,
   assertLoopObjectModeCompatible,

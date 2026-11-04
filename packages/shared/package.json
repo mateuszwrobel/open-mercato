@@ -29,6 +29,10 @@
       "types": "./src/lib/catalog-visibility/index.ts",
       "default": "./dist/lib/catalog-visibility/index.js"
     },
+    "./lib/cache/types": {
+      "types": "./src/lib/cache/types.ts",
+      "default": "./dist/lib/cache/types.js"
+    },
     "./lib/hotkeys": {
       "types": "./src/lib/hotkeys/index.ts",
       "default": "./dist/lib/hotkeys/index.js"
@@ -130,7 +134,6 @@
     "@mikro-orm/core": "^7.1.14",
     "@mikro-orm/decorators": "^7.1.14",
     "@mikro-orm/postgresql": "^7.1.14",
-    "@open-mercato/cache": "workspace:*",
     "@types/html-to-text": "^9.0.4",
     "@types/sanitize-html": "^2.16.1",
     "dotenv": "^17.4.2",

@@ -2,7 +2,7 @@ import type { EntityManager } from '@mikro-orm/postgresql'
 import type {
   AiAgentDefinition,
   AiAgentPageContextInput,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { findOneWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import { WarrantyClaim } from './data/entities'
 

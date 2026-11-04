@@ -51,11 +51,11 @@ import type {
   AiAgentStructuredOutput,
   LoopStepRecord,
   LoopTrace,
-} from './ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type {
   AiChatRequestContext,
   AiResolvedAttachmentPart,
-} from './attachment-bridge-types'
+} from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import {
   resolveAiAgentTools,
   AgentPolicyError,
@@ -68,7 +68,7 @@ import {
   attachmentPartsToUiFileParts,
   resolveAttachmentPartsForAgent,
   summarizeAttachmentPartsForPrompt,
-} from './attachment-parts'
+} from '@open-mercato/core/lib/ai/attachment-parts'
 import { AiAgentPromptOverrideRepository } from '../data/repositories/AiAgentPromptOverrideRepository'
 import { AiAgentMutationPolicyOverrideRepository } from '../data/repositories/AiAgentMutationPolicyOverrideRepository'
 import { AiAgentRuntimeOverrideRepository } from '../data/repositories/AiAgentRuntimeOverrideRepository'
@@ -77,7 +77,7 @@ import type { TenantAllowlistSnapshot } from './model-allowlist'
 import { composeSystemPromptWithOverride } from './prompt-override-merge'
 import { isAgentTaskPlanEnabled } from './agent-registry'
 import { isKnownMutationPolicy } from './agent-policy'
-import type { AiAgentMutationPolicy } from './ai-agent-definition'
+import type { AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { recordTokenUsage } from './token-usage-recorder'
 import { injectTaskPlanIntoStream } from './task-plan-stream'
 import { TASK_PLAN_RUNTIME_PROMPT_SECTION } from './task-plan-labels'

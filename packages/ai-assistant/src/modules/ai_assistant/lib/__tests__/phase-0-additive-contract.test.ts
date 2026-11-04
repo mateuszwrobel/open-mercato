@@ -5,11 +5,11 @@ import {
 } from '../tool-loader'
 import { toolRegistry } from '../tool-registry'
 import { convertMcpToolsToAiSdk } from '../mcp-tool-adapter'
-import { defineAiTool } from '../ai-tool-definition'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
 import type {
   AiToolDefinition,
   McpToolDefinition,
-} from '../types'
+} from '@open-mercato/core/lib/ai/types'
 import type { InProcessMcpClient, ToolInfoWithSchema } from '../in-process-client'
 import { createAiAgentsExtension } from '../../../../../../cli/src/lib/generators/extensions/ai-agents'
 

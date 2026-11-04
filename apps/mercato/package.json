@@ -59,6 +59,7 @@
     "@open-mercato/scheduler": "workspace:*",
     "@open-mercato/search": "workspace:*",
     "@open-mercato/shared": "workspace:*",
+    "@open-mercato/storage-s3": "workspace:*",
     "@open-mercato/sync-akeneo": "workspace:*",
     "@open-mercato/telemetry": "workspace:*",
     "@open-mercato/tillio": "workspace:*",

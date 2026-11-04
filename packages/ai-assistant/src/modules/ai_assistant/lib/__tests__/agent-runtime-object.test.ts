@@ -1,4 +1,4 @@
-import type { AiAgentDefinition, AiAgentPageContextInput } from '../ai-agent-definition'
+import type { AiAgentDefinition, AiAgentPageContextInput } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 const generateObjectMock = jest.fn()
 const streamObjectMock = jest.fn()

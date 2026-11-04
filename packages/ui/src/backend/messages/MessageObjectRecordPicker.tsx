@@ -5,8 +5,8 @@ import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { Button } from '../../primitives/button'
 import { Input } from '../../primitives/input'
 import { Label } from '../../primitives/label'
-import { getMessageUiComponentRegistry } from '@open-mercato/core/modules/messages/components/utils/typeUiRegistry'
-import { getMessageObjectType } from '@open-mercato/core/modules/messages/lib/message-objects-registry'
+import { getMessageUiComponentRegistry } from '@open-mercato/shared/modules/messages/type-ui-registry'
+import { getMessageObjectType } from '@open-mercato/shared/modules/messages/object-type-registry'
 
 export type MessageObjectOptionItem = {
   id: string

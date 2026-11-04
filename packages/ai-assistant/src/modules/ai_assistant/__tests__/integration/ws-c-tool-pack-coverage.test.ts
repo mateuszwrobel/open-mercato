@@ -25,8 +25,8 @@
  */
 
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../../lib/ai-agent-definition'
-import type { AiToolDefinition } from '../../lib/types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const streamTextMock = jest.fn()
 

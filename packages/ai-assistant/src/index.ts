@@ -27,7 +27,7 @@
  */
 
 // Re-export types
-export * from './modules/ai_assistant/lib/types'
+export * from '@open-mercato/core/lib/ai/types'
 
 // Focused-agent definition types + helper
 export {
@@ -43,10 +43,10 @@ export {
   type AiAgentPageContextInput,
   type AiAgentStructuredOutput,
   type AiAgentDataCapabilities,
-} from './modules/ai_assistant/lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 // Additive AI tool builder
-export { defineAiTool } from './modules/ai_assistant/lib/ai-tool-definition'
+export { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
 
 // Attachment-bridge contract types (spec Phase 0 §8/§10, implementation-ready for Phase 3 runtime)
 export {
@@ -54,7 +54,7 @@ export {
   type AiResolvedAttachmentPart,
   type AiUiPart,
   type AiChatRequestContext,
-} from './modules/ai_assistant/lib/attachment-bridge-types'
+} from '@open-mercato/core/lib/ai/attachment-bridge-types'
 
 // Prompt-composition primitives (spec Phase 0 §8, implementation-ready for Phase 3 prompt composer)
 export {
@@ -147,13 +147,13 @@ export {
   type AiApiOperationRunnerOptions,
   type AiApiHttpMethod,
   type AiToolExecutionContext,
-} from './modules/ai_assistant/lib/ai-api-operation-runner'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 
 // API-backed AI tool helper (Phase 2 of API-backed AI tool DRY refactor)
 export {
   defineApiBackedAiTool,
   type ApiBackedAiToolConfig,
-} from './modules/ai_assistant/lib/api-backed-tool'
+} from '@open-mercato/core/lib/ai/api-backed-tool'
 
 // Mutation-preparation helper (Phase 3 WS-C — Step 5.6)
 export {
@@ -272,7 +272,7 @@ export {
   summarizeAttachmentPartsForPrompt,
   type ResolveAttachmentPartsInput,
   type AttachmentSigner,
-} from './modules/ai_assistant/lib/attachment-parts'
+} from '@open-mercato/core/lib/ai/attachment-parts'
 
 // OpenCode client
 export {

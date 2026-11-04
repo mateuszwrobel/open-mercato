@@ -1,7 +1,7 @@
 import type { SearchService } from '@open-mercato/search/service'
 import type { SearchStrategyId, IndexableRecord } from '@open-mercato/search/types'
 import { authorizeFeatures } from '@open-mercato/shared/security/featurePolicy'
-import type { McpToolRegistry, McpToolDefinition } from './types'
+import type { McpToolRegistry, McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 import {
   TOOL_ENTITY_ID,
   GLOBAL_TENANT_ID,

@@ -3,27 +3,9 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
 import { Spinner } from '@open-mercato/ui/primitives/spinner'
+import type { LineChartProps } from './types'
 
-export type LineChartDataItem = Record<string, string | number | null | undefined>
-
-export type LineChartProps = {
-  title?: string
-  data: LineChartDataItem[]
-  index: string
-  categories: string[]
-  loading?: boolean
-  error?: string | null
-  colors?: string[]
-  showArea?: boolean
-  valueFormatter?: (value: number) => string
-  showLegend?: boolean
-  showGridLines?: boolean
-  curveType?: 'linear' | 'natural' | 'monotone' | 'step'
-  connectNulls?: boolean
-  className?: string
-  emptyMessage?: string
-  categoryLabels?: Record<string, string>
-}
+export type { LineChartDataItem, LineChartProps } from './types'
 
 function defaultValueFormatter(value: number): string {
   if (Math.abs(value) >= 1_000_000) {

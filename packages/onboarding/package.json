@@ -70,10 +70,10 @@
     }
   },
   "peerDependencies": {
-    "@open-mercato/shared": "workspace:*"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@open-mercato/shared": "workspace:*",
     "@types/jest": "^30.0.0",
     "jest": "^30.4.2",
     "ts-jest": "^29.4.12",
@@ -86,5 +86,11 @@
     "type": "git",
     "url": "https://github.com/open-mercato/open-mercato",
     "directory": "packages/onboarding"
+  },
+  "dependencies": {
+    "@open-mercato/core": "workspace:*",
+    "@open-mercato/search": "workspace:*",
+    "@open-mercato/shared": "workspace:*",
+    "@open-mercato/ui": "workspace:*"
   }
 }

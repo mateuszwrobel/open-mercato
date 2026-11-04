@@ -3,15 +3,10 @@ import type { AwilixContainer } from 'awilix'
 import type { EntityManager } from '@mikro-orm/postgresql'
 import { z } from 'zod'
 import {
-  AiModelFactoryError,
-  createModelFactory,
-  type AiModelFactory,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/model-factory'
-import {
   attachmentPartsToUiFileParts,
   resolveAttachmentParts,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/attachment-parts'
-import type { AiChatRequestContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/attachment-bridge-types'
+} from '@open-mercato/core/lib/ai/attachment-parts'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import { CrudHttpError } from '@open-mercato/shared/lib/crud/errors'
 import { findOneWithDecryption, findWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import { WarrantyClaim, WarrantyClaimEvent, WarrantyClaimLine } from '../data/entities'
@@ -343,8 +338,27 @@ async function withTimeout<T>(
   }
 }
 
+// `@open-mercato/ai-assistant` is an OPTIONAL peer of `@open-mercato/core`: a
+// deployment without the AI runtime keeps the warranty desk working minus the
+// AI features. The factory is therefore loaded lazily; a failed load or a
+// factory error both surface as `WarrantyAiNotConfiguredError`.
+type WarrantyModelFactoryModule = {
+  createModelFactory: (container: AwilixContainer) => {
+    resolveModel: (options: { moduleId?: string }) => { model: unknown }
+  }
+}
+
+async function loadModelFactoryModule(): Promise<WarrantyModelFactoryModule | null> {
+  try {
+    return (await import(
+      '@open-mercato/ai-assistant/modules/ai_assistant/lib/model-factory'
+    )) as unknown as WarrantyModelFactoryModule
+  } catch {
+    return null
+  }
+}
+
 function isAiModelFactoryError(err: unknown): boolean {
-  if (err instanceof AiModelFactoryError) return true
   if (typeof err !== 'object' || err === null) return false
   return (err as { name?: unknown }).name === 'AiModelFactoryError'
 }
@@ -355,10 +369,12 @@ export function isWarrantyAiNotConfiguredError(err: unknown): boolean {
   return (err as { name?: unknown }).name === 'WarrantyAiNotConfiguredError'
 }
 
-function resolveWarrantyModel(container: AwilixContainer): GenerateTextModel {
-  let factory: AiModelFactory
+async function resolveWarrantyModel(container: AwilixContainer): Promise<GenerateTextModel> {
+  const factoryModule = await loadModelFactoryModule()
+  if (!factoryModule) throw new WarrantyAiNotConfiguredError()
+  let factory: ReturnType<WarrantyModelFactoryModule['createModelFactory']>
   try {
-    factory = createModelFactory(container)
+    factory = factoryModule.createModelFactory(container)
   } catch {
     throw new WarrantyAiNotConfiguredError()
   }
@@ -373,8 +389,8 @@ function resolveWarrantyModel(container: AwilixContainer): GenerateTextModel {
   }
 }
 
-function resolveWarrantyObjectModel(container: AwilixContainer): GenerateObjectModel {
-  return resolveWarrantyModel(container) as GenerateObjectModel
+async function resolveWarrantyObjectModel(container: AwilixContainer): Promise<GenerateObjectModel> {
+  return await resolveWarrantyModel(container) as GenerateObjectModel
 }
 
 async function buildAttachmentMessages(input: {
@@ -552,7 +568,7 @@ async function generateWarrantyText(input: {
   prompt: string
   emptyMessage: string
 }): Promise<string> {
-  const model = resolveWarrantyModel(input.container)
+  const model = await resolveWarrantyModel(input.container)
   let text: string
   try {
     const result = await withTimeout(
@@ -577,7 +593,7 @@ async function generateWarrantyText(input: {
 }
 
 export async function assessDamagePhoto(input: AssessDamagePhotoInput): Promise<WarrantyDamagePhotoAssessment> {
-  const model = resolveWarrantyObjectModel(input.container)
+  const model = await resolveWarrantyObjectModel(input.container)
   const { claim, line } = await loadDamageAssessmentFacts(input)
   const system = [
     'You are a warranty damage assessor reviewing customer-submitted claim photos.',
@@ -616,7 +632,7 @@ export async function assessDamagePhoto(input: AssessDamagePhotoInput): Promise<
 }
 
 export async function extractProofOfPurchase(input: ExtractProofOfPurchaseInput): Promise<WarrantyProofOfPurchaseExtraction> {
-  const model = resolveWarrantyObjectModel(input.container)
+  const model = await resolveWarrantyObjectModel(input.container)
   const system = [
     'You extract proof-of-purchase facts for a warranty desk from receipts, invoices, or order confirmations.',
     'Use only facts visible in the attached image or PDF.',

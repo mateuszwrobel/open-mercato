@@ -12,7 +12,7 @@ import { authenticateMcpRequest, extractApiKeyFromHeaders, hasRequiredFeatures }
 import { jsonSchemaToZod, toSafeZodSchema } from './schema-utils'
 import { buildMcpToolAnnotations } from './mcp-tool-annotations'
 import { redactSecretForLog, deriveApiKeySessionId } from './log-redaction'
-import type { McpServerConfig, McpToolContext } from './types'
+import type { McpServerConfig, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { SearchService } from '@open-mercato/search/service'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'
 import type { ApiKey } from '@open-mercato/core/modules/api_keys/data/entities'

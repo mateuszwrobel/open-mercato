@@ -4,10 +4,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
-import {
-  TEMPLATE_CONTENT_TRANSFORMS,
-  TEMPLATE_ONLY_RELATIVE_FILES,
-} from '../../../../scripts/template-sync.ts'
+// Computed specifier: this repo-wide audit reads root tooling on purpose,
+// but must not become a static module edge (repo-root is not a dependency
+// target for the architecture graph; see scripts/archspec/gen-intended-spec.mjs).
+const { TEMPLATE_CONTENT_TRANSFORMS, TEMPLATE_ONLY_RELATIVE_FILES, } = await import(new URL('../../../../scripts/template-sync.ts', import.meta.url).href)
 
 // The canonical example module is the reference surface agents read in a scaffolded
 // app, so the copy shipped in the create-app template must be a byte-for-byte mirror

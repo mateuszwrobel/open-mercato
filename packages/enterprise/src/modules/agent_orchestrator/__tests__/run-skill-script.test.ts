@@ -1,6 +1,6 @@
 import { InMemoryAgentRunSessionStore } from '../lib/runtime/agentRunSessionStore'
 import { registerAgentSkills, clearAgentSkills } from '../lib/runtime/fileAgentSkills'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 // Mock the sandbox so the tool-handler ROUTING is tested deterministically
 // without spinning an isolated-vm isolate (the real sandbox is exercised in

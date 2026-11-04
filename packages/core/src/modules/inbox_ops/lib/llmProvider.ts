@@ -10,13 +10,19 @@ import {
   isOpenCodeProviderId,
   type OpenCodeProviderId,
 } from '@open-mercato/shared/lib/ai/opencode-provider'
-import {
-  AiModelFactoryError,
-  createModelFactory,
-  type AiModelFactory,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/model-factory'
 import { joinProviderModel } from '@open-mercato/shared/lib/ai/model-id'
 import { extractionOutputSchema } from '../data/validators'
+
+// `@open-mercato/ai-assistant` is an OPTIONAL peer of `@open-mercato/core`:
+// the model factory is loaded lazily so deployments without the AI runtime
+// keep working through the legacy OPENCODE_* fallback below.
+type ModelFactoryInstance = {
+  resolveModel: (options: { moduleId?: string; callerOverride?: string }) => {
+    model: unknown
+    providerId: string
+    modelId: string
+  }
+}
 
 // Vercel AI SDK provider factories return LanguageModelV1 but generateObject()
 // expects a narrower LanguageModel union. The types are structurally compatible
@@ -129,18 +135,23 @@ export async function withTimeout<T>(
  * reaches `createModelFactory` without stubbing `@open-mercato/ai-assistant`.
  */
 export const __inboxOpsLlmProviderInternal = {
-  createModelFactory,
+  createModelFactory: async (container: AwilixContainer): Promise<ModelFactoryInstance> => {
+    const mod = (await import(
+      '@open-mercato/ai-assistant/modules/ai_assistant/lib/model-factory'
+    )) as unknown as { createModelFactory: (container: AwilixContainer) => ModelFactoryInstance }
+    return mod.createModelFactory(container)
+  },
   createContainer,
 }
 
-function tryFactoryResolution(input: {
+async function tryFactoryResolution(input: {
   moduleId?: string
   modelOverride?: string | null
-}): { model: AiModel; modelWithProvider: string } | null {
-  let factory: AiModelFactory
+}): Promise<{ model: AiModel; modelWithProvider: string } | null> {
+  let factory: ModelFactoryInstance
   try {
     const container = __inboxOpsLlmProviderInternal.createContainer()
-    factory = __inboxOpsLlmProviderInternal.createModelFactory(container as AwilixContainer)
+    factory = await __inboxOpsLlmProviderInternal.createModelFactory(container as AwilixContainer)
   } catch {
     return null
   }
@@ -157,7 +168,7 @@ function tryFactoryResolution(input: {
       modelWithProvider: joinProviderModel(resolution.providerId, resolution.modelId),
     }
   } catch (err) {
-    if (err instanceof AiModelFactoryError) {
+    if (typeof err === 'object' && err !== null && (err as { name?: unknown }).name === 'AiModelFactoryError') {
       // Fall back to the legacy path so the shim keeps throwing the original
       // OPENCODE_*-era error messages existing tests/consumers rely on.
       return null
@@ -179,7 +190,7 @@ export async function resolveConfiguredStructuredModel(input: {
   moduleId?: string
   modelOverride?: string | null
 } = {}): Promise<{ model: AiModel; modelWithProvider: string }> {
-  const fromFactory = tryFactoryResolution(input)
+  const fromFactory = await tryFactoryResolution(input)
   if (fromFactory) return fromFactory
 
   // BC: Legacy OPENCODE_PROVIDER / OPENCODE_MODEL path. Only runs when the

@@ -7,8 +7,8 @@ import {
   createAiApiOperationRunner,
   expectedRecordVersionFor,
   type AiToolExecutionContext,
-} from '../ai-api-operation-runner'
-import type { AiToolDefinition, McpToolContext } from '../types'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 
 const PRODUCT_ID = 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa'
 const VERSION = '2026-10-13T10:00:00.000Z'

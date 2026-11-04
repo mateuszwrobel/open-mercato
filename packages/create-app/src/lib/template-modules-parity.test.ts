@@ -3,7 +3,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
-import { TEMPLATE_COMMENTED_MODULES, TEMPLATE_CONTENT_TRANSFORMS } from '../../../../scripts/template-sync.ts'
+// Computed specifier: this repo-wide audit reads root tooling on purpose,
+// but must not become a static module edge (repo-root is not a dependency
+// target for the architecture graph; see scripts/archspec/gen-intended-spec.mjs).
+const { TEMPLATE_COMMENTED_MODULES, TEMPLATE_CONTENT_TRANSFORMS } = await import(new URL('../../../../scripts/template-sync.ts', import.meta.url).href)
 
 // `packages/create-app/template/src/modules.ts` deliberately diverges from
 // `apps/mercato/src/modules.ts`: design_system/example are stripped outright, while

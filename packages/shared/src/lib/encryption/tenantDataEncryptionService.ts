@@ -1,5 +1,5 @@
 import type { EntityManager } from '@mikro-orm/postgresql'
-import type { CacheStrategy } from '@open-mercato/cache'
+import type { CacheStrategy } from '../cache/types'
 import {
   TenantDataEncryptionError,
   TenantDataEncryptionErrorCode,

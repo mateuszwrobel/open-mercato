@@ -11,11 +11,11 @@
  */
 import type { EntityManager } from '@mikro-orm/postgresql'
 import { z } from 'zod'
-import { defineApiBackedAiTool } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/api-backed-tool'
+import { defineApiBackedAiTool } from '@open-mercato/core/lib/ai/api-backed-tool'
 import type {
   AiApiOperationRequest,
   AiToolExecutionContext,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import { findOneWithDecryption, findWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import { loadCustomFieldValues } from '@open-mercato/shared/lib/crud/custom-fields'
 import { E } from '#generated/entities.ids.generated'

@@ -1,7 +1,9 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { buildPackage } from '../../scripts/build-package.mjs'
+// Repo-root tooling is loaded via a computed specifier: the root is not a
+// dependency target for the architecture graph (see architecture.spec.toml).
+const { buildPackage } = await import(new URL('../../scripts/build-package.mjs', import.meta.url).href)
 import { discoverResolvedIcons } from './scripts/lucideIconDiscovery.cjs'
 import { buildLucideRegistrySource, checkLucideRegistryDrift } from './scripts/lucideRegistrySource.cjs'
 

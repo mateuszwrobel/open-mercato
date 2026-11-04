@@ -14,7 +14,7 @@
  * and emitted output shapes stay identical.
  */
 import type { EntityManager } from '@mikro-orm/postgresql'
-import type { AiToolExecutionContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+import type { AiToolExecutionContext } from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import type { CustomersToolContext } from './types'
 
 export function toIso(value: unknown): string | null {

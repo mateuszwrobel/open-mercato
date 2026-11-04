@@ -36,8 +36,8 @@ import {
 } from '../prepare-mutation'
 import { resolveAiAgentTools } from '../agent-tools'
 import { AiPendingActionRepository } from '../../data/repositories/AiPendingActionRepository'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import {
   resetAgentRegistryForTests,
   seedAgentRegistryForTests,

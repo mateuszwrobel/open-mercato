@@ -2,7 +2,7 @@ import { createServer, type Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
 import type { AwilixContainer } from 'awilix'
 import { z } from 'zod'
-import type { McpToolContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { CONTRACT_VERSION, READY, type AdapterModule } from '@open-mercato/web-research'
 import { webFetchTool, webSearchTool } from '../tools'
 

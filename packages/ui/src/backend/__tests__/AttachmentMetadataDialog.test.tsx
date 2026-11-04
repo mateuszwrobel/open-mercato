@@ -18,8 +18,8 @@ jest.mock('@open-mercato/ui/backend/inputs/TagsInput', () => ({
   TagsInput: () => <div data-testid="tags-input" />,
 }))
 
-jest.mock('@open-mercato/core/generated-shims/entities.ids.generated', () => ({
-  E: { attachments: { attachment: 'attachments.attachment' } },
+jest.mock('@open-mercato/ui/backend/attachments/AttachmentContentPreview', () => ({
+  AttachmentContentPreview: () => <div data-testid="attachment-preview" />,
 }))
 
 jest.mock('@open-mercato/ui/backend/CrudForm', () => ({
@@ -39,10 +39,6 @@ jest.mock('@open-mercato/ui/backend/CrudForm', () => ({
       ))}
     </form>
   ),
-}))
-
-jest.mock('@open-mercato/core/modules/attachments/components/AttachmentContentPreview', () => ({
-  AttachmentContentPreview: () => <div data-testid="attachment-content-preview" />,
 }))
 
 describe('AttachmentMetadataDialog assignment layout', () => {

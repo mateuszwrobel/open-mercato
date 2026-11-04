@@ -16,7 +16,7 @@
  * errors reached the human instead of the model that could act on them.
  */
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { resolveAiAgentTools } from '../agent-tools'
 import { resetAgentRegistryForTests, seedAgentRegistryForTests } from '../agent-registry'
 import { registerMcpTool, toolRegistry } from '../tool-registry'

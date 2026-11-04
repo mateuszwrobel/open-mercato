@@ -15,9 +15,9 @@
  */
 
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../../lib/ai-agent-definition'
-import type { AiChatRequestContext } from '../../lib/attachment-bridge-types'
-import type { AiToolDefinition } from '../../lib/types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 // --- SDK mocks (mirrors agent-runtime-parity.test.ts) ---------------------
 

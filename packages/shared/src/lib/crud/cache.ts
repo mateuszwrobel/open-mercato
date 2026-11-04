@@ -1,5 +1,6 @@
 import type { AwilixContainer } from 'awilix'
-import { runWithCacheTenant, type CacheStrategy } from '@open-mercato/cache'
+import { runWithCacheTenant } from '@open-mercato/cache'
+import type { CacheStrategy } from '../cache/types'
 import { parseBooleanToken } from '../boolean'
 import { createLogger } from '../logger'
 

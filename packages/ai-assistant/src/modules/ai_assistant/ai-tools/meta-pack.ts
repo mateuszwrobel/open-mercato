@@ -8,10 +8,10 @@
  * crash if `ai-agents.generated.ts` has not been emitted yet.
  */
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { listAgents, getAgent, loadAgentRegistry } from '../lib/agent-registry'
 import { hasRequiredFeatures } from '../lib/auth'
-import { defineAiTool } from '../lib/ai-tool-definition'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
 import {
   TASK_PLAN_DETAIL_MAX_CHARS,
   TASK_PLAN_ID_MAX_CHARS,

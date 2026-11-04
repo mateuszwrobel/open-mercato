@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { ListToolsRequestSchema } from '@modelcontextprotocol/sdk/types.js'
 import { createMcpServer } from '../mcp-server'
-import type { AiToolDefinition, McpServerOptions, McpToolDefinition } from '../types'
+import type { AiToolDefinition, McpServerOptions, McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const mockCapturedHandlers = new Map<unknown, (request: unknown) => Promise<unknown>>()
 const mockRegisteredTools = new Map<string, McpToolDefinition>()

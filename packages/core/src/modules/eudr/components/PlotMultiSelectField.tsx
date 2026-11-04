@@ -10,7 +10,7 @@ import { flash } from '@open-mercato/ui/backend/FlashMessages'
 import { LookupSelect, type LookupSelectItem } from '@open-mercato/ui/backend/inputs'
 import { Button } from '@open-mercato/ui/primitives/button'
 import { IconButton } from '@open-mercato/ui/primitives/icon-button'
-import { PICKER_PAGE_SIZE } from './formConfig'
+import { PICKER_PAGE_SIZE } from './LookupSelectField'
 import { translatePlural } from '../lib/plural'
 
 type PlotOption = {
