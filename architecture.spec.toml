@@ -1,0 +1,298 @@
+[project]
+language = "ts"
+
+[[project.excluded_sources]]
+path = ".ai/skills/om-fix-specs/scripts"
+reason = "python helper script for a repo agent skill; tooling, not product source"
+
+[[project.excluded_sources]]
+path = ".ai/skills/om-wcag-guardian/scripts"
+reason = "python helpers for a repo agent skill; tooling, not product source"
+
+
+[[module]]
+name = "repo-root"
+matches = { units = ["open-mercato"], modules = ["scripts/*", ".ai/*", "tests/*", "docker/*", "config/*", "certs/*", "*.ts", "*.mjs", "*.cjs", "*.js", "*.json", "*.md"] }
+[module.allowed]
+depend_on = ["ai-assistant", "app", "carrier-inpost", "channel-apns", "channel-discord", "channel-expo", "channel-fcm", "channel-gmail", "channel-imap", "checkout", "cli", "core", "create-mercato-app", "documents", "enterprise", "eslint-plugin-ds", "gateway-stripe", "onboarding", "search", "shared", "sync-akeneo", "telemetry", "tillio", "ui", "webhooks"]
+
+[[module]]
+name = "ai-assistant"
+matches = { units = ["@open-mercato/ai-assistant"], modules = ["packages/ai-assistant/*"] }
+[module.allowed]
+depend_on = ["cli", "core", "queue", "repo-root", "search", "shared", "ui"]
+
+[[module]]
+name = "app"
+matches = { units = ["@open-mercato/app"], modules = ["apps/mercato/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "cache", "carrier-inpost", "channel-apns", "channel-discord", "channel-expo", "channel-fcm", "channel-gmail", "channel-imap", "channel-resend", "channel-ses", "channel-smtp", "checkout", "cli", "content", "core", "documents", "enterprise", "events", "gateway-autopay", "gateway-stripe", "gateway-tpay", "onboarding", "queue", "repo-root", "scheduler", "search", "shared", "storage-s3", "sync-akeneo", "telemetry", "tillio", "ui", "webhooks"]
+
+[[module]]
+name = "cache"
+matches = { units = ["@open-mercato/cache"], modules = ["packages/cache/*"] }
+[module.allowed]
+depend_on = ["repo-root", "shared"]
+
+[[module]]
+name = "carrier-inpost"
+matches = { units = ["@open-mercato/carrier-inpost"], modules = ["packages/carrier-inpost/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-apns"
+matches = { units = ["@open-mercato/channel-apns"], modules = ["packages/channel-apns/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-discord"
+matches = { units = ["@open-mercato/channel-discord"], modules = ["packages/channel-discord/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-expo"
+matches = { units = ["@open-mercato/channel-expo"], modules = ["packages/channel-expo/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-fcm"
+matches = { units = ["@open-mercato/channel-fcm"], modules = ["packages/channel-fcm/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-gmail"
+matches = { units = ["@open-mercato/channel-gmail"], modules = ["packages/channel-gmail/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-imap"
+matches = { units = ["@open-mercato/channel-imap"], modules = ["packages/channel-imap/*"] }
+[module.allowed]
+depend_on = ["core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-resend"
+matches = { units = ["@open-mercato/channel-resend"], modules = ["packages/channel-resend/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-ses"
+matches = { units = ["@open-mercato/channel-ses"], modules = ["packages/channel-ses/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "channel-smtp"
+matches = { units = ["@open-mercato/channel-smtp"], modules = ["packages/channel-smtp/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "checkout"
+matches = { units = ["@open-mercato/checkout"], modules = ["packages/checkout/*"] }
+[module.allowed]
+depend_on = ["core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "cli"
+matches = { units = ["@open-mercato/cli"], modules = ["packages/cli/*"] }
+[module.allowed]
+depend_on = ["core", "events", "queue", "repo-root", "shared", "telemetry"]
+
+[[module]]
+name = "content"
+matches = { units = ["@open-mercato/content"], modules = ["packages/content/*"] }
+[module.allowed]
+depend_on = ["repo-root", "shared", "ui"]
+
+[[module]]
+name = "core"
+matches = { units = ["@open-mercato/core"], modules = ["packages/core/*"] }
+[module.allowed]
+depend_on = ["app", "cache", "events", "queue", "repo-root", "search", "shared", "storage-s3", "ui"]
+
+[[module]]
+name = "create-mercato-app"
+matches = { units = ["create-mercato-app"], modules = ["packages/create-app/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "app", "cache", "cli", "core", "documents", "enterprise", "events", "gateway-stripe", "queue", "repo-root", "search", "shared", "telemetry", "ui", "webhooks"]
+
+[[module]]
+name = "documents"
+matches = { units = ["@open-mercato/documents"], modules = ["packages/documents/*"] }
+[module.allowed]
+depend_on = ["core", "events", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "enterprise"
+matches = { units = ["@open-mercato/enterprise"], modules = ["packages/enterprise/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "cache", "core", "queue", "repo-root", "scheduler", "shared", "ui", "web-research"]
+
+[[module]]
+name = "eslint-plugin-ds"
+matches = { units = ["@open-mercato/eslint-plugin-ds"], modules = ["packages/eslint-plugin-ds/*"] }
+[module.allowed]
+depend_on = []
+
+[[module]]
+name = "events"
+matches = { units = ["@open-mercato/events"], modules = ["packages/events/*"] }
+[module.allowed]
+depend_on = ["queue", "repo-root", "shared"]
+
+[[module]]
+name = "gateway-autopay"
+matches = { units = ["@open-mercato/gateway-autopay"], modules = ["packages/gateway-autopay/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "gateway-stripe"
+matches = { units = ["@open-mercato/gateway-stripe"], modules = ["packages/gateway-stripe/*"] }
+[module.allowed]
+depend_on = ["core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "gateway-tpay"
+matches = { units = ["@open-mercato/gateway-tpay"], modules = ["packages/gateway-tpay/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared"]
+
+[[module]]
+name = "onboarding"
+matches = { units = ["@open-mercato/onboarding"], modules = ["packages/onboarding/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "search", "shared", "ui"]
+
+[[module]]
+name = "open-mercato-docs"
+matches = { units = ["open-mercato-docs"], modules = ["apps/docs/*"] }
+[module.allowed]
+depend_on = []
+
+[[module]]
+name = "queue"
+matches = { units = ["@open-mercato/queue"], modules = ["packages/queue/*"] }
+[module.allowed]
+depend_on = ["repo-root", "shared", "telemetry"]
+
+[[module]]
+name = "scheduler"
+matches = { units = ["@open-mercato/scheduler"], modules = ["packages/scheduler/*"] }
+[module.allowed]
+depend_on = ["core", "events", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "search"
+matches = { units = ["@open-mercato/search"], modules = ["packages/search/*"] }
+[module.allowed]
+depend_on = ["cache", "core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "shared"
+matches = { units = ["@open-mercato/shared"], modules = ["packages/shared/*"] }
+[module.allowed]
+depend_on = ["repo-root"]
+
+[[module]]
+name = "starter"
+matches = { units = ["@open-mercato/starter"], modules = ["packages/starter/*"] }
+[module.allowed]
+depend_on = []
+
+[[module]]
+name = "storage-s3"
+matches = { units = ["@open-mercato/storage-s3"], modules = ["packages/storage-s3/*"] }
+[module.allowed]
+depend_on = ["core", "queue", "repo-root", "shared"]
+
+[[module]]
+name = "sync-akeneo"
+matches = { units = ["@open-mercato/sync-akeneo"], modules = ["packages/sync-akeneo/*"] }
+[module.allowed]
+depend_on = ["core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "telemetry"
+matches = { units = ["@open-mercato/telemetry"], modules = ["packages/telemetry/*"] }
+[module.allowed]
+depend_on = ["core", "repo-root", "shared"]
+
+[[module]]
+name = "tillio"
+matches = { units = ["@open-mercato/tillio"], modules = ["packages/tillio/*"] }
+[module.allowed]
+depend_on = ["ai-assistant", "core", "queue", "repo-root", "shared", "ui"]
+
+[[module]]
+name = "ui"
+matches = { units = ["@open-mercato/ui"], modules = ["packages/ui/*"] }
+[module.allowed]
+depend_on = ["repo-root", "shared"]
+
+[[module]]
+name = "web-research"
+matches = { units = ["@open-mercato/web-research"], modules = ["packages/web-research/*"] }
+[module.allowed]
+depend_on = ["repo-root"]
+
+[[module]]
+name = "web-research-browser"
+matches = { units = ["@open-mercato/web-research-browser"], modules = ["packages/web-research-browser/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research", "web-research-serp"]
+
+[[module]]
+name = "web-research-exa"
+matches = { units = ["@open-mercato/web-research-exa"], modules = ["packages/web-research-exa/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "web-research-firecrawl"
+matches = { units = ["@open-mercato/web-research-firecrawl"], modules = ["packages/web-research-firecrawl/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "web-research-model"
+matches = { units = ["@open-mercato/web-research-model"], modules = ["packages/web-research-model/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "web-research-searxng"
+matches = { units = ["@open-mercato/web-research-searxng"], modules = ["packages/web-research-searxng/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "web-research-serp"
+matches = { units = ["@open-mercato/web-research-serp"], modules = ["packages/web-research-serp/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "web-research-tavily"
+matches = { units = ["@open-mercato/web-research-tavily"], modules = ["packages/web-research-tavily/*"] }
+[module.allowed]
+depend_on = ["repo-root", "web-research"]
+
+[[module]]
+name = "webhooks"
+matches = { units = ["@open-mercato/webhooks"], modules = ["packages/webhooks/*"] }
+[module.allowed]
+depend_on = ["cache", "core", "events", "queue", "repo-root", "shared", "ui"]
+
+[[constraint]]
+type = "no_cycles"
+modules = ["ai-assistant", "cache", "carrier-inpost", "channel-apns", "channel-discord", "channel-expo", "channel-fcm", "channel-gmail", "channel-imap", "channel-resend", "channel-ses", "channel-smtp", "checkout", "cli", "content", "core", "create-mercato-app", "documents", "enterprise", "eslint-plugin-ds", "events", "gateway-autopay", "gateway-stripe", "gateway-tpay", "onboarding", "open-mercato-docs", "queue", "scheduler", "search", "shared", "starter", "storage-s3", "sync-akeneo", "telemetry", "tillio", "ui", "web-research", "web-research-browser", "web-research-exa", "web-research-firecrawl", "web-research-model", "web-research-searxng", "web-research-serp", "web-research-tavily", "webhooks"]
+
