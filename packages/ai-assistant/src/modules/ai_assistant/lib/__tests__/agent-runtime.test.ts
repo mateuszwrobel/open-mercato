@@ -1,5 +1,5 @@
-import type { AiAgentDefinition, AiAgentPageContextInput } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition, AiAgentPageContextInput } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const streamTextMock = jest.fn()
 const stepCountIsMock = jest.fn((count: number) => ({ __stopWhen: 'stepCount', count }))

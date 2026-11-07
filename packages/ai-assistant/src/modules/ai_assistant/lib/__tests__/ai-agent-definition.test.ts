@@ -3,9 +3,9 @@ import {
   defineAiAgent,
   defineAiAgentExtension,
   type AiAgentDefinition,
-} from '../ai-agent-definition'
-import { defineAiTool } from '../ai-tool-definition'
-import type { AiToolDefinition, McpToolDefinition } from '../types'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
+import type { AiToolDefinition, McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 describe('defineAiTool', () => {
   it('returns the tool definition unchanged (identity builder)', () => {

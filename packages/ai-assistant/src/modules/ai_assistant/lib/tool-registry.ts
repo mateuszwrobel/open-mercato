@@ -1,5 +1,5 @@
 import { createLogger } from '@open-mercato/shared/lib/logger'
-import type { McpToolDefinition, McpToolRegistry, ToolRegistrationOptions } from './types'
+import type { McpToolDefinition, McpToolRegistry, ToolRegistrationOptions } from '@open-mercato/core/lib/ai/types'
 
 const logger = createLogger('ai_assistant')
 

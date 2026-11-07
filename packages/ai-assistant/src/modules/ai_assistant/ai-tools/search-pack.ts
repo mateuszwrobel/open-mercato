@@ -15,8 +15,8 @@ import {
   type SearchEntityConfigLookup,
   type SearchEntityDenyReason,
 } from '@open-mercato/shared/lib/search/entityAccess'
-import { defineAiTool } from '../lib/ai-tool-definition'
-import type { AiToolDefinition, McpToolContext } from '../lib/types'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { resolveOrganizationScopeForRequest } from '@open-mercato/core/modules/directory/utils/organizationScope'
 import { resolveOrganizationScopeFilter } from '@open-mercato/core/modules/directory/utils/organizationScopeFilter'
 import type { AuthContext } from '@open-mercato/shared/lib/auth/server'

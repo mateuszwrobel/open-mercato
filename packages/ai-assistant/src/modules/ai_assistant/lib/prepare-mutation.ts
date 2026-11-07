@@ -2,15 +2,15 @@ import { createLogger } from '@open-mercato/shared/lib/logger'
 import { createHash } from 'node:crypto'
 import type { AwilixContainer } from 'awilix'
 import type { EntityManager } from '@mikro-orm/postgresql'
-import type { AiAgentDefinition, AiAgentMutationPolicy } from './ai-agent-definition'
-import type { AiChatRequestContext, AiUiPart } from './attachment-bridge-types'
+import type { AiAgentDefinition, AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiChatRequestContext, AiUiPart } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import type {
   AiToolDefinition,
   AiToolFieldDiffDisplayHints,
   AiToolLoadBeforeRecord,
   AiToolLoadBeforeSingleRecord,
   McpToolContext,
-} from './types'
+} from '@open-mercato/core/lib/ai/types'
 import { resolveEffectiveMutationPolicy } from './agent-policy'
 import { AiPendingActionRepository } from '../data/repositories/AiPendingActionRepository'
 import type { AiPendingAction } from '../data/entities'

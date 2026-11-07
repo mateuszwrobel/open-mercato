@@ -25,7 +25,7 @@ export interface CustomersToolContext {
 
 /**
  * Shape returned by `loadBeforeRecord` on a mutation tool. Mirrors
- * `AiToolLoadBeforeSingleRecord` from `@open-mercato/ai-assistant/lib/types`;
+ * `AiToolLoadBeforeSingleRecord` from `@open-mercato/core/lib/ai/types`;
  * the customers module deliberately does not import that package so we keep a
  * local prefix-compatible declaration (same rule as `CustomersAiToolDefinition`).
  */

@@ -3,9 +3,9 @@ import { dynamicTool, type Tool } from 'ai'
 import type { AwilixContainer } from 'awilix'
 import type { ZodType } from 'zod'
 import { createRequestContainer } from '@open-mercato/shared/lib/di/container'
-import type { AiAgentDefinition, AiAgentMutationPolicy } from './ai-agent-definition'
-import type { AiChatRequestContext, AiUiPart } from './attachment-bridge-types'
-import type { AiToolDefinition, McpToolContext } from './types'
+import type { AiAgentDefinition, AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiChatRequestContext, AiUiPart } from '@open-mercato/core/lib/ai/attachment-bridge-types'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type {
   AiPendingActionExecutionResult,
   AiPendingActionStatus,

@@ -2,7 +2,7 @@ import type { EntityManager, FilterQuery } from '@mikro-orm/postgresql'
 import { llmProviderRegistry } from '../../lib/llm-registry'
 import { canonicalProviderId } from '../../lib/model-allowlist'
 import { AiAgentRuntimeOverride } from '../entities'
-import type { AiAgentLoopStopCondition } from '../../lib/ai-agent-definition'
+import type { AiAgentLoopStopCondition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 export interface AiAgentRuntimeOverrideContext {
   tenantId: string

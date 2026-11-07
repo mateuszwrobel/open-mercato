@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { aiTools, SUBMIT_OUTCOME_TOOL_ID } from '../ai-tools'
 import { InMemoryAgentRunSessionStore } from '../lib/runtime/agentRunSessionStore'
 import { registerFileAgent, getAgentEntry, type AgentRegistryEntry } from '../lib/sdk/defineAgent'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 // submit_outcome resolves the active agent from the SHARED run-session store
 // (ctx.sessionId — never trusted from the model), reads that agent's compiled

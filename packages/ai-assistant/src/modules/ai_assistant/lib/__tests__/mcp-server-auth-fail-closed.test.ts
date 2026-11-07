@@ -1,5 +1,5 @@
 import { createMcpServer } from '../mcp-server'
-import type { McpServerOptions } from '../types'
+import type { McpServerOptions } from '@open-mercato/core/lib/ai/types'
 
 jest.mock('@modelcontextprotocol/sdk/server/index.js', () => ({
   Server: class {

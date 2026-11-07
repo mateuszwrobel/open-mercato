@@ -27,7 +27,7 @@ import {
   defineAiAgentExtension,
   type AiAgentDefinition,
   type AiAgentExtension,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type { AiAgentOverridesMap } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-overrides'
 
 const AGENT_ID = 'example.todo_assistant'

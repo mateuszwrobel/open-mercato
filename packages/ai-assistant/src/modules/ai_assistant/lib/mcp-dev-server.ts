@@ -12,7 +12,7 @@ import { jsonSchemaToZod } from './schema-utils'
 import { buildMcpToolAnnotations } from './mcp-tool-annotations'
 import { getApiKeyFromMcpJson } from './mcp-dev-key-resolution'
 import { isLoopbackHost, resolveMcpHost } from './mcp-host-resolution'
-import type { McpToolContext } from './types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { SearchService } from '@open-mercato/search/service'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'
 

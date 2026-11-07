@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { CHANNEL_DISCORD_AI_AUTO_REPLY_RUN_FEATURE } from './lib/ai-features'
 
 /**

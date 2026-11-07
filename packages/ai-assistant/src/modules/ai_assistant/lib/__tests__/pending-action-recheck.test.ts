@@ -11,8 +11,8 @@ import {
   runPendingActionRechecks,
   type PendingActionAuthContext,
 } from '../pending-action-recheck'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import type { AiPendingAction } from '../../data/entities'
 
 const findWithDecryptionMock = jest.fn()

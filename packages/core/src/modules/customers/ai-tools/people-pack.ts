@@ -18,12 +18,12 @@
  * and output shape are unchanged.
  */
 import { z } from 'zod'
-import { defineApiBackedAiTool } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/api-backed-tool'
+import { defineApiBackedAiTool } from '@open-mercato/core/lib/ai/api-backed-tool'
 import {
   createAiApiOperationRunner,
   type AiApiOperationRequest,
   type AiToolExecutionContext,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import { findWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import {
   CustomerPersonProfile,

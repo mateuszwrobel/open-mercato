@@ -16,7 +16,7 @@
  * Phase 3 of spec 2026-04-28-ai-agents-agentic-loop-controls.
  */
 
-import type { AiAgentLoopConfig, AiAgentDefinition } from '../ai-agent-definition'
+import type { AiAgentLoopConfig, AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { BudgetEnforcer, resolveEffectiveLoopConfig } from '../agent-runtime'
 
 describe('Phase 3: BudgetEnforcer', () => {

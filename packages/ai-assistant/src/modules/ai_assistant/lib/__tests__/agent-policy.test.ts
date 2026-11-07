@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import { checkAgentPolicy } from '../agent-policy'
 import { resetAgentRegistryForTests, seedAgentRegistryForTests } from '../agent-registry'
 import { toolRegistry, registerMcpTool } from '../tool-registry'

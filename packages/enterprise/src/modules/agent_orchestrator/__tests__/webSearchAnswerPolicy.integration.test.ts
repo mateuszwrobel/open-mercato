@@ -1,6 +1,6 @@
 import type { AwilixContainer } from 'awilix'
 import { z } from 'zod'
-import type { McpToolContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { SearchEngineResult, SearchResult } from '@open-mercato/web-research'
 import { getAuthFromRequest } from '@open-mercato/shared/lib/auth/server'
 import { createRequestContainer } from '@open-mercato/shared/lib/di/container'

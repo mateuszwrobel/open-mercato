@@ -1,6 +1,6 @@
 import type { AwilixContainer } from 'awilix'
 import type { EntityManager } from '@mikro-orm/postgresql'
-import type { AiToolExecutionContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+import type { AiToolExecutionContext } from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import { getStaffMemberByUserId } from '../lib/staffMemberResolver'
 
 /**

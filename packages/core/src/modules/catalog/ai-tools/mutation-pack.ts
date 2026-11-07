@@ -62,7 +62,7 @@ import {
   createAiApiOperationRunner,
   expectedRecordVersionFor,
   type AiToolExecutionContext,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import { CatalogProduct, CatalogProductPrice } from '../data/entities'
 import { Attachment } from '@open-mercato/core/modules/attachments/data/entities'
 import {

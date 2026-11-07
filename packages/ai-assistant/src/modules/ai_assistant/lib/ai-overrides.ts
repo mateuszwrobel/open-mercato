@@ -31,8 +31,8 @@ import {
  *
  * @see ../../../../../../.ai/specs/implemented/2026-04-30-ai-overrides-and-module-disable.md
  */
-import type { AiAgentDefinition, AiAgentExtension } from './ai-agent-definition'
-import type { AiToolDefinition } from './types'
+import type { AiAgentDefinition, AiAgentExtension } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const logger = createLogger('ai_assistant')
 

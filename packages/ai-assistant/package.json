@@ -27,10 +27,6 @@
       "types": "./src/modules/ai_assistant/lib/tool-registry.ts",
       "default": "./dist/modules/ai_assistant/lib/tool-registry.js"
     },
-    "./types": {
-      "types": "./src/modules/ai_assistant/lib/types.ts",
-      "default": "./dist/modules/ai_assistant/lib/types.js"
-    },
     "./ai-sdk": {
       "types": "./src/modules/ai_assistant/lib/ai-sdk.ts",
       "default": "./dist/modules/ai_assistant/lib/ai-sdk.js"

@@ -26,7 +26,7 @@ export interface CatalogToolContext {
 
 /**
  * Shape returned by `loadBeforeRecord` on a single-record mutation tool.
- * Mirrors `AiToolLoadBeforeSingleRecord` from `@open-mercato/ai-assistant/lib/types`.
+ * Mirrors `AiToolLoadBeforeSingleRecord` from `@open-mercato/core/lib/ai/types`.
  */
 export interface CatalogToolLoadBeforeSingleRecord {
   recordId: string
@@ -37,7 +37,7 @@ export interface CatalogToolLoadBeforeSingleRecord {
 
 /**
  * Shape returned by `loadBeforeRecords` on a bulk mutation tool. Mirrors
- * `AiToolLoadBeforeRecord` from `@open-mercato/ai-assistant/lib/types` — the
+ * `AiToolLoadBeforeRecord` from `@open-mercato/core/lib/ai/types` — the
  * Step 5.6 `prepareMutation` runtime wraps this into the `records[]` array on
  * the emitted `mutation-preview-card`.
  */

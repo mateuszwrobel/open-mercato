@@ -6,7 +6,7 @@
  * and read-only posture — plus the one behaviour that proves the todo tool is
  * wired to the module's own DI service rather than re-counting rows itself.
  */
-import type { McpToolContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 import aclFeatures from '../acl'
 import aiTools, { customerPriorityInputSchema, requireToolScope } from '../ai-tools'
 import { EXAMPLE_TODO_SUMMARY_SERVICE } from '../di'

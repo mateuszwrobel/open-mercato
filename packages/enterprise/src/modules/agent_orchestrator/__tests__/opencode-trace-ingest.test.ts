@@ -30,7 +30,7 @@ import { registerFileAgent, getAgentEntry, type AgentRegistryEntry } from '../li
 import { aiTools, SUBMIT_OUTCOME_TOOL_ID } from '../ai-tools'
 import { compileOutcome } from '../lib/sdk/outcomeSchema'
 import { InMemoryAgentRunSessionStore } from '../lib/runtime/agentRunSessionStore'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const submitOutcomeTool = aiTools.find((t) => t.name === SUBMIT_OUTCOME_TOOL_ID) as AiToolDefinition
 

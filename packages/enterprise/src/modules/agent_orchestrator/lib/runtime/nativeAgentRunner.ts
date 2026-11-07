@@ -2,7 +2,7 @@ import type { AwilixContainer } from 'awilix'
 import type { EntityManager } from '@mikro-orm/postgresql'
 import { runAiAgentObject } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/agent-runtime'
 import { createModelFactory } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/model-factory'
-import type { AiChatRequestContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/attachment-bridge-types'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import type { CommandBus } from '@open-mercato/shared/lib/commands'
 import type { AgentRegistryEntry } from '../sdk/defineAgent'
 import {

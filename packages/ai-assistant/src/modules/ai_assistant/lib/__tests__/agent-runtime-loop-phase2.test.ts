@@ -54,7 +54,7 @@ jest.mock('@open-mercato/shared/lib/ai/llm-provider-registry', () => ({
   },
 }))
 
-import type { AiAgentDefinition, AiAgentLoopConfig } from '../ai-agent-definition'
+import type { AiAgentDefinition, AiAgentLoopConfig } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type { PreparedAiSdkOptions, PreparedAiSdkObjectOptions } from '../agent-runtime'
 import {
   resetAgentRegistryForTests,

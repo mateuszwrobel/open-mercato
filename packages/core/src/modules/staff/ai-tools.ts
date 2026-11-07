@@ -1,4 +1,4 @@
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import timeTrackingAiTools from './ai-tools/time-tracking-pack'
 
 /**

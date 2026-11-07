@@ -1,7 +1,7 @@
 import { createLogger } from '@open-mercato/shared/lib/logger'
 import type { AwilixContainer } from 'awilix'
 import type { EntityManager } from '@mikro-orm/postgresql'
-import type { AiChatRequestContext } from './attachment-bridge-types'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
 import { AiTokenUsageRepository } from '../data/repositories/AiTokenUsageRepository'
 import { emitAiAssistantEvent } from '../events'
 

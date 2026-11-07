@@ -25,7 +25,7 @@ import {
   resetAgentRegistryForTests,
   seedAgentRegistryForTests,
 } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/agent-registry'
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 jest.mock('@open-mercato/shared/lib/encryption/find', () => ({
   findOneWithDecryption: jest.fn(),

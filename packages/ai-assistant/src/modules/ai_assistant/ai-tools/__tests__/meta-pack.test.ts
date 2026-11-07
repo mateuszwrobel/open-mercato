@@ -17,7 +17,7 @@ jest.mock('../../lib/generated-registry-loader', () => ({
 }))
 
 import { z } from 'zod'
-import type { AiAgentDefinition } from '../../lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import {
   resetAgentRegistryForTests,
   seedAgentRegistryForTests,

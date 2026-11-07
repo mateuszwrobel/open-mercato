@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { buildMcpToolAnnotations } from '../mcp-tool-annotations'
-import type { AiToolDefinition } from '../types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 function makeTool(overrides: Partial<AiToolDefinition> = {}): AiToolDefinition {
   return {

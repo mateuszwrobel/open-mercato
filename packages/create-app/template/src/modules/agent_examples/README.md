@@ -38,7 +38,7 @@ any mutation tool. An agent can only read and propose — never write directly.
 2. **Declare the agent** — `ai-agents.ts` (this file name is auto-discovered):
 
    ```ts
-   import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+   import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
    import { defineAgent } from '@open-mercato/enterprise/modules/agent_orchestrator/lib/sdk/defineAgent'
    import { ticketTriageResult } from './data/validators'
 

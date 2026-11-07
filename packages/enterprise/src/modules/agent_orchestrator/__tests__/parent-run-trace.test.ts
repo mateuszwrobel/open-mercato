@@ -3,7 +3,7 @@ import { aiTools } from '../ai-tools'
 import { DELEGATE_TOOL_ID, registerFileAgent, getAgentEntry, type AgentRegistryEntry } from '../lib/sdk/defineAgent'
 import { withRunContext } from '../lib/runtime/runContext'
 import { createRun } from '../lib/runtime/persistence'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const delegateTool = aiTools.find((t) => t.name === DELEGATE_TOOL_ID) as AiToolDefinition
 

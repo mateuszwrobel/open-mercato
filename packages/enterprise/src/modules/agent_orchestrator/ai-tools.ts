@@ -1,6 +1,6 @@
 import { z } from 'zod'
-import { defineAiTool } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-tool-definition'
-import type { AiToolDefinition, McpToolContext } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { DELEGATE_TOOL_ID, getAgentEntry, ensureAgentsLoaded } from './lib/sdk/defineAgent'
 import type { AgentRuntimeService } from './lib/runtime/agentRuntime'
 import type { AgentRunSessionStore } from './lib/runtime/agentRunSessionStore'

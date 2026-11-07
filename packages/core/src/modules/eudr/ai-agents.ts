@@ -5,7 +5,7 @@
  * backed by the EUDR compliance tool pack plus the shared search,
  * attachments, and meta tools.
  */
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 type PromptSectionName =
   | 'role'

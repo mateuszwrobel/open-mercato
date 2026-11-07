@@ -9,8 +9,8 @@
 import type { EntityManager } from '@mikro-orm/postgresql'
 import { z } from 'zod'
 import { findWithDecryption, findOneWithDecryption } from '@open-mercato/shared/lib/encryption/find'
-import { defineAiTool } from '../lib/ai-tool-definition'
-import type { AiToolDefinition } from '../lib/types'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 type AttachmentMetadataModule = {
   readAttachmentMetadata: (raw: unknown) => {

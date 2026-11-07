@@ -6,7 +6,7 @@ import { getToolRegistry } from './tool-registry'
 import { executeTool } from './tool-executor'
 import { loadAllModuleTools } from './tool-loader'
 import { authenticateMcpRequest, hasRequiredFeatures, type McpAuthSuccess } from './auth'
-import type { McpToolContext, McpClientInterface, ToolInfo, ToolResult, McpToolDefinition } from './types'
+import type { McpToolContext, McpClientInterface, ToolInfo, ToolResult, McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'
 
 /**

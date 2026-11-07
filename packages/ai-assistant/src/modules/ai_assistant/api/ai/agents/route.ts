@@ -8,7 +8,7 @@ import { llmProviderRegistry } from '../../../lib/llm-registry'
 import { isAgentTaskPlanEnabled, listAgents, loadAgentRegistry } from '../../../lib/agent-registry'
 import { hasRequiredFeatures } from '../../../lib/auth'
 import { toolRegistry } from '../../../lib/tool-registry'
-import type { AiToolDefinition } from '../../../lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const logger = createLogger('ai_assistant')
 

@@ -4,8 +4,8 @@ import type { ToolExecutionOptions } from 'ai'
 import { resolveAiAgentTools } from '../agent-tools'
 import { resetAgentRegistryForTests, seedAgentRegistryForTests } from '../agent-registry'
 import { registerMcpTool, toolRegistry } from '../tool-registry'
-import type { AiToolDefinition } from '../types'
-import type { AiAgentDefinition } from '../ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 const prepareMutationMock = jest.fn()
 const container = createContainer()

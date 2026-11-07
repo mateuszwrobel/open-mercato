@@ -12,7 +12,7 @@ import { serializePendingActionForClient } from '../../../../../lib/pending-acti
 import { getAgent, loadAgentRegistry } from '../../../../../lib/agent-registry'
 import { toolRegistry } from '../../../../../lib/tool-registry'
 import { loadAllModuleTools } from '../../../../../lib/tool-loader'
-import type { AiToolDefinition } from '../../../../../lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import {
   runPendingActionRechecks,
   type PendingActionRecheckResult,
@@ -22,7 +22,7 @@ import {
   type PendingActionExecuteContext,
 } from '../../../../../lib/pending-action-executor'
 import { AiAgentMutationPolicyOverrideRepository } from '../../../../../data/repositories/AiAgentMutationPolicyOverrideRepository'
-import type { AiAgentMutationPolicy } from '../../../../../lib/ai-agent-definition'
+import type { AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import { isKnownMutationPolicy } from '../../../../../lib/agent-policy'
 
 const logger = createLogger('ai_assistant')

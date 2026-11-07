@@ -7,7 +7,7 @@
  * `attachments.*`, `meta.*`) so they flow through the existing
  * `ai-tools.generated.ts` pipeline without any new generator plumbing.
  */
-import type { AiToolDefinition } from './lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import searchAiTools from './ai-tools/search-pack'
 import attachmentsAiTools from './ai-tools/attachments-pack'
 import metaAiTools from './ai-tools/meta-pack'

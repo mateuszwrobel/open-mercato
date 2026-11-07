@@ -33,7 +33,7 @@ jest.mock('@open-mercato/shared/lib/encryption/find', () => ({
   findOneWithDecryption: async (_em: unknown, entity: unknown, where: Row) => mockRead(entity, where)[0] ?? null,
 }))
 
-jest.mock('@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner', () => ({
+jest.mock('@open-mercato/core/lib/ai/ai-api-operation-runner', () => ({
   createAiApiOperationRunner: (ctx: RunnerContext) => {
     mockRunnerContexts.push(ctx)
     return {

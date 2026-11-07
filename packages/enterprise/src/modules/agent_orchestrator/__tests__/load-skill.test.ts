@@ -1,7 +1,7 @@
 import { aiTools, LOAD_SKILL_TOOL_ID } from '../ai-tools'
 import { InMemoryAgentRunSessionStore } from '../lib/runtime/agentRunSessionStore'
 import { registerAgentSkills, clearAgentSkills } from '../lib/runtime/fileAgentSkills'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 // The load_skill MCP tool is the progressive-disclosure fallback. It resolves the
 // active agent from the shared run-session store (ctx.sessionId — never trusted

@@ -1,7 +1,7 @@
 import { loadCodeModeTools } from '../codemode-tools'
 import { buildMcpToolAnnotations } from '../mcp-tool-annotations'
 import { registerMcpTool } from '../tool-registry'
-import type { McpToolDefinition } from '../types'
+import type { McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 jest.mock('../api-endpoint-index', () => ({
   getApiEndpoints: jest.fn(async () => []),
