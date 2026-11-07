@@ -18,7 +18,7 @@ import type {
   DealsMapCanvasDeal,
   DealsMapCanvasProps,
   DealsMapPreview,
-} from './DealsMapCanvas'
+} from './types'
 import { createLogger } from '@open-mercato/shared/lib/logger'
 
 const logger = createLogger('customers')

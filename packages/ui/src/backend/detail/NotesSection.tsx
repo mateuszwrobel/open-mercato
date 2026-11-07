@@ -2,9 +2,9 @@
 
 import * as React from 'react'
 import type { PluggableList } from 'unified'
-import type { AppearanceSelectorLabels } from '@open-mercato/core/modules/dictionaries/components/AppearanceSelector'
-import { AppearanceDialog } from '@open-mercato/core/modules/customers/components/detail/AppearanceDialog'
-import type { IconOption } from '@open-mercato/core/modules/dictionaries/components/dictionaryAppearance'
+import type { AppearanceSelectorLabels } from '@open-mercato/ui/backend/dictionaries/components/AppearanceSelector'
+import { AppearanceDialog } from '@open-mercato/ui/backend/dictionaries/components/AppearanceDialog'
+import type { IconOption } from '@open-mercato/ui/backend/dictionaries/components/dictionaryAppearance'
 import { ArrowUpRightSquare, FileCode, Loader2, Palette, Pencil, Plus, Trash2 } from 'lucide-react'
 import { formatRelativeTime } from '@open-mercato/shared/lib/time'
 import { hasMoreFromPage } from '@open-mercato/shared/lib/pagination/load-more'

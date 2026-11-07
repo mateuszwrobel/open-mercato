@@ -31,13 +31,13 @@ import {
 import { SortByPopover, type SortOption } from '../../pipeline/components/SortByPopover'
 import { fetchAssignableStaffMembers } from '../../../../../components/detail/assignableStaff'
 import { DealsLocationPanel } from './DealsLocationPanel'
-import {
-  DealsMapCanvas,
-  type DealsMapCanvasDeal,
-  type DealsMapLegendStage,
-  type DealsMapPreview,
-  type MapCenter,
-} from './DealsMapCanvas'
+import { DealsMapCanvas } from './DealsMapCanvas'
+import type {
+  DealsMapCanvasDeal,
+  DealsMapLegendStage,
+  DealsMapPreview,
+  MapCenter,
+} from './types'
 
 const DEFAULT_SORT: SortOption = 'updated_desc'
 const PAGE_SIZE = 100
@@ -71,7 +71,9 @@ type PipelineStageRecord = {
   color?: string | null
 }
 
-export type StageMeta = { label: string; tone: FilterOptionTone }
+import type { MapDeal, MapDealLocation, StageMeta } from './types'
+
+export type { MapDeal, MapDealLocation, StageMeta } from './types'
 
 type DealMapApiLocation = {
   latitude?: number | string | null
@@ -106,29 +108,6 @@ type DealsMapApiResponse = {
   page?: number
   pageSize?: number
   totalPages?: number
-}
-
-export type MapDealLocation = {
-  latitude: number
-  longitude: number
-  city: string | null
-  region: string | null
-  country: string | null
-}
-
-export type MapDeal = {
-  id: string
-  title: string
-  status: string | null
-  pipelineId: string | null
-  pipelineStageId: string | null
-  valueAmount: number | null
-  valueCurrency: string | null
-  probability: number | null
-  expectedCloseAt: string | null
-  ownerUserId: string | null
-  companyLabel: string | null
-  location: MapDealLocation | null
 }
 
 type DealsMapQueryResult = {

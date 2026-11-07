@@ -12,8 +12,12 @@ import {
 import { createHash } from 'node:crypto'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { atomicWriteFileSync } from '../../scripts/lib/add-js-extension.mjs'
-import { buildPackage } from '../../scripts/build-package.mjs'
+// Repo-root tooling is loaded via a computed specifier: the root is not a
+// dependency target for the architecture graph (see architecture.spec.toml).
+const { atomicWriteFileSync } = await import(new URL('../../scripts/lib/add-js-extension.mjs', import.meta.url).href)
+// Repo-root tooling is loaded via a computed specifier: the root is not a
+// dependency target for the architecture graph (see architecture.spec.toml).
+const { buildPackage } = await import(new URL('../../scripts/build-package.mjs', import.meta.url).href)
 
 const packageDir = dirname(fileURLToPath(import.meta.url))
 

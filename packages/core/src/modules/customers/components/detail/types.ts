@@ -173,3 +173,19 @@ export type TabEmptyStateConfig = {
   actionLabel: string
   description?: string
 }
+
+export type LinkedPersonSummary = {
+  id: string
+  displayName: string
+  primaryEmail?: string | null
+  primaryPhone?: string | null
+  status?: string | null
+  lifecycleStage?: string | null
+  jobTitle?: string | null
+  department?: string | null
+  createdAt?: string | null
+  organizationId?: string | null
+  temperature?: string | null
+  source?: string | null
+  linkedAt?: string | null
+}

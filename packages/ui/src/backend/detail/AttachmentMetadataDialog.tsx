@@ -16,9 +16,8 @@ import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { cn } from '@open-mercato/shared/lib/utils'
 import { Copy, Download, Trash2 } from 'lucide-react'
 import { useDialogKeyHandler } from '@open-mercato/ui/hooks/useDialogKeyHandler'
-import { AttachmentContentPreview } from '@open-mercato/core/modules/attachments/components/AttachmentContentPreview'
-import { buildAttachmentFileUrl, buildAttachmentImageUrl, slugifyAttachmentFileName } from '@open-mercato/core/modules/attachments/lib/imageUrls'
-import { E } from '@open-mercato/core/generated-shims/entities.ids.generated'
+import { AttachmentContentPreview } from '@open-mercato/ui/backend/attachments/AttachmentContentPreview'
+import { buildAttachmentFileUrl, buildAttachmentImageUrl, slugifyAttachmentFileName } from '@open-mercato/shared/lib/attachments/imageUrls'
 
 export type AttachmentAssignment = {
   type: string
@@ -94,6 +93,12 @@ type AttachmentMetadataDialogProps = {
   item: AttachmentItem | null
   availableTags: string[]
   onSave: (id: string, payload: AttachmentMetadataSavePayload) => Promise<void>
+  /**
+   * Entity id used as the CrudForm injection surface. Defaults to the frozen
+   * `attachments.attachment` id so existing `crud-form:attachments.attachment:fields`
+   * injections keep targeting this dialog.
+   */
+  entityId?: string
 }
 
 function formatFileSize(value: number): string {
@@ -310,7 +315,7 @@ export function AttachmentAssignmentsEditor({
   )
 }
 
-export function AttachmentMetadataDialog({ open, onOpenChange, item, availableTags, onSave }: AttachmentMetadataDialogProps) {
+export function AttachmentMetadataDialog({ open, onOpenChange, item, availableTags, onSave, entityId = 'attachments.attachment' }: AttachmentMetadataDialogProps) {
   const t = useT()
   const [sizeWidth, setSizeWidth] = React.useState<string>('')
   const [sizeHeight, setSizeHeight] = React.useState<string>('')
@@ -670,7 +675,7 @@ export function AttachmentMetadataDialog({ open, onOpenChange, item, availableTa
             <CrudForm<AttachmentMetadataFormValues>
               embedded
               schema={metadataSchema}
-              entityId={E.attachments.attachment}
+              entityId={entityId}
               fields={metadataFields}
               groups={metadataGroups}
               initialValues={initialValues ?? undefined}

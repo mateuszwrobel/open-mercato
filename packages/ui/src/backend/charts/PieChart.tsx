@@ -3,25 +3,9 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
 import { Spinner } from '@open-mercato/ui/primitives/spinner'
+import type { PieChartProps } from './types'
 
-export type PieChartDataItem = {
-  name: string
-  value: number
-}
-
-export type PieChartProps = {
-  title?: string
-  data: PieChartDataItem[]
-  loading?: boolean
-  error?: string | null
-  colors?: string[]
-  variant?: 'pie' | 'donut'
-  valueFormatter?: (value: number) => string
-  showLabel?: boolean
-  showTooltip?: boolean
-  className?: string
-  emptyMessage?: string
-}
+export type { PieChartDataItem, PieChartProps } from './types'
 
 function defaultValueFormatter(value: number): string {
   if (Math.abs(value) >= 1_000_000) {

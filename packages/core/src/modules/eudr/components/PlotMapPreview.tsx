@@ -2,11 +2,9 @@
 
 import * as React from 'react'
 import { Spinner } from '@open-mercato/ui/primitives/spinner'
+import type { PlotMapPreviewProps } from './types'
 
-export type PlotMapPreviewProps = {
-  features: unknown[]
-  height?: number
-}
+export type { PlotMapPreviewProps } from './types'
 
 type PlotMapPreviewComponent = (props: PlotMapPreviewProps) => React.ReactElement
 

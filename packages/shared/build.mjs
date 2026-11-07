@@ -1,7 +1,9 @@
 import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
-import { buildPackage } from '../../scripts/build-package.mjs'
+// Repo-root tooling is loaded via a computed specifier: the root is not a
+// dependency target for the architecture graph (see architecture.spec.toml).
+const { buildPackage } = await import(new URL('../../scripts/build-package.mjs', import.meta.url).href)
 import { buildVersionSource } from './scripts/versionSource.cjs'
 
 const packageDir = dirname(fileURLToPath(import.meta.url))

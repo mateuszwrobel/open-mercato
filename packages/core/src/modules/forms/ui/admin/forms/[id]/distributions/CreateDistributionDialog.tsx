@@ -27,7 +27,7 @@ import { apiCall } from '@open-mercato/ui/backend/utils/apiCall'
 import { flash } from '@open-mercato/ui/backend/FlashMessages'
 import { useGuardedMutation } from '@open-mercato/ui/backend/injection/useGuardedMutation'
 import { useT } from '@open-mercato/shared/lib/i18n/context'
-import type { DistributionMode } from './DistributionsPanel'
+import type { DistributionMode } from './types'
 
 type CreateResponse = {
   id: string

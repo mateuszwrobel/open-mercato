@@ -36,6 +36,7 @@ import {
   evalSuiteStatusVariant,
   formatPassScore,
   mapEvalRunRow,
+  type AssertionRow,
   type EvalRunRow,
 } from '../../../../components/evalRunTypes'
 import { AssertionFormDrawer } from './AssertionFormDrawer'
@@ -53,22 +54,7 @@ export type EvaluationTabProps = {
   initialSection?: EvaluationSection
 }
 
-/** Shared with `AssertionFormDrawer` (type-only, erased at compile time). */
-export type AssertionRow = {
-  id: string
-  key: string
-  scorerKey: string
-  title: string
-  description: string | null
-  appliesTo: string
-  type: 'deterministic' | 'llm_judge'
-  severity: 'gate' | 'warn'
-  config: Record<string, unknown>
-  enabled: boolean
-  /** True when the row was inherited from a wildcard (`appliesTo = *`) query. */
-  wildcard: boolean
-  updatedAt: string | null
-}
+export type { AssertionRow } from '../../../../components/evalRunTypes'
 
 type EvalCaseStatus = 'draft' | 'approved' | 'archived'
 type EvalCaseStatusFilter = 'all' | EvalCaseStatus

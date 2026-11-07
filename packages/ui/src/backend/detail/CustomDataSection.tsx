@@ -14,8 +14,8 @@ import type { CustomFieldDefDto } from '@open-mercato/ui/backend/utils/customFie
 import {
   DictionaryValue,
   type DictionaryMap,
-} from '@open-mercato/core/modules/dictionaries/components/dictionaryAppearance'
-import { ensureDictionaryEntries } from '@open-mercato/core/modules/dictionaries/components/hooks/useDictionaryEntries'
+} from '@open-mercato/ui/backend/dictionaries/components/dictionaryAppearance'
+import { ensureDictionaryEntries } from '@open-mercato/ui/backend/dictionaries/components/hooks/useDictionaryEntries'
 import {
   type ResolvedValueDisplay,
   collectRelationValueIds,

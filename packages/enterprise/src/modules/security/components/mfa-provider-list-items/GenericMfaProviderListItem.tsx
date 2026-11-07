@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { ShieldCheck } from 'lucide-react'
 import { useT } from '@open-mercato/shared/lib/i18n/context'
-import type { ProviderListComponentProps } from '../mfa-ui-registry'
+import type { ProviderListComponentProps } from '../../types'
 import MfaProviderListRow from './MfaProviderListRow'
 
 export default function GenericMfaProviderListItem({

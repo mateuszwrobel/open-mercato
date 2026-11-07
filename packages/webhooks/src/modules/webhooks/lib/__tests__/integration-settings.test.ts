@@ -13,7 +13,7 @@ describe('resolveWebhookIntegrationSettings', () => {
     })
 
     const settings = await resolveWebhookIntegrationSettings(
-      { resolve },
+      { resolve: resolve as unknown as <T>(name: string) => T },
       {
         tenantId: 'tenant-1',
         organizationId: 'org-1',

@@ -1,4 +1,4 @@
-import type { CacheStrategy } from '@open-mercato/cache'
+import type { CacheStrategy } from '../cache/types'
 import { analyzeCacheSegments, purgeCacheSegment } from '../cache/segments'
 
 export type CrudCacheSegmentInfo = {

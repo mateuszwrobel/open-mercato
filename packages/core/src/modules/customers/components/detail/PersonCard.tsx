@@ -10,7 +10,7 @@ import { Button } from '@open-mercato/ui/primitives/button'
 import { Avatar } from '@open-mercato/ui/primitives/avatar'
 import { IconButton } from '@open-mercato/ui/primitives/icon-button'
 import { Popover, PopoverContent, PopoverTrigger } from '@open-mercato/ui/primitives/popover'
-import type { LinkedPersonSummary } from './LinkedPeopleSection'
+import type { LinkedPersonSummary } from './types'
 import { formatDate, formatFallbackLabel } from './utils'
 
 const sourceColorMap: Record<string, string> = {

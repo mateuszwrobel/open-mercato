@@ -56,7 +56,7 @@ function createContext(em: EntityManager, cache?: CacheStrategy | null, eventNam
     }
     throw new Error(`Unexpected dependency: ${name}`)
   })
-  return { eventName, resolve }
+  return { eventName, resolve: resolve as unknown as <T>(name: string) => T }
 }
 
 describe('webhooks outbound dispatch subscriber - subscription cache', () => {

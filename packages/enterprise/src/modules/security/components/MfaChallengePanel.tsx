@@ -6,17 +6,9 @@ import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { readApiResultOrThrow } from '@open-mercato/ui/backend/utils/apiCall'
 import { Button } from '@open-mercato/ui/primitives/button'
 import { useProviderChallengeComponent } from './mfa-ui-registry'
+import type { MfaChallengeMethod } from '../types'
 
-export type MfaChallengeMethod = {
-  type: string
-  label: string
-  icon: string
-  components?: {
-    list?: string
-    details?: string
-    challenge?: string
-  }
-}
+export type { MfaChallengeMethod } from '../types'
 
 const RECOVERY_CODE_METHOD_TYPE = 'recovery_code'
 
