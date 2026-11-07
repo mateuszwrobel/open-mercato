@@ -72,6 +72,7 @@
   "dependencies": {
     "@open-mercato/cache": "workspace:*",
     "@open-mercato/core": "workspace:*",
+    "@open-mercato/events": "workspace:*",
     "@open-mercato/queue": "workspace:*",
     "@open-mercato/ui": "workspace:*",
     "svix": "^1.99.1"

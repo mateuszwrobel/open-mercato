@@ -8610,22 +8610,29 @@ __metadata:
     "@ai-sdk/openai": "npm:^4.0.50"
     "@modelcontextprotocol/sdk": "npm:^1.32.0"
     "@open-mercato/cli": "workspace:*"
+    "@open-mercato/queue": "workspace:*"
+    "@open-mercato/search": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
+    "@types/jest": "npm:^30.0.0"
     "@types/react": "npm:^19.2.18"
     "@types/react-dom": "npm:^19.2.5"
     ai: "npm:^7.0.83"
     cmdk: "npm:^1.0.0"
     framer-motion: "npm:^13.1.1"
     isolated-vm: "npm:^7.0.1"
+    jest: "npm:^30.4.2"
     react: "npm:19.2.8"
     react-dom: "npm:19.2.8"
     react-json-view-lite: "npm:^2.5.0"
     react-markdown: "npm:^10.1.0"
+    ts-jest: "npm:^29.4.12"
     tsx: "npm:^4.23.12"
+    typescript: "npm:7.0.2"
     zod: "npm:^4.6.6"
     zod-to-json-schema: "npm:^3.25.2"
   peerDependencies:
+    "@open-mercato/core": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
     react: ^19.0.0
@@ -8671,6 +8678,7 @@ __metadata:
     "@open-mercato/scheduler": "workspace:*"
     "@open-mercato/search": "workspace:*"
     "@open-mercato/shared": "workspace:*"
+    "@open-mercato/storage-s3": "workspace:*"
     "@open-mercato/sync-akeneo": "workspace:*"
     "@open-mercato/telemetry": "workspace:*"
     "@open-mercato/tillio": "workspace:*"
@@ -8743,6 +8751,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@open-mercato/cache@workspace:packages/cache"
   dependencies:
+    "@open-mercato/shared": "workspace:*"
     "@types/better-sqlite3": "npm:^7.6.13"
     "@types/jest": "npm:^30.0.0"
     "@types/node": "npm:^26.4.0"
@@ -9047,6 +9056,7 @@ __metadata:
   resolution: "@open-mercato/checkout@workspace:packages/checkout"
   dependencies:
     "@open-mercato/core": "workspace:*"
+    "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
     "@types/jest": "npm:^30.0.0"
@@ -9076,6 +9086,7 @@ __metadata:
     "@mikro-orm/decorators": "npm:^7.1.14"
     "@mikro-orm/migrations": "npm:^7.1.14"
     "@mikro-orm/postgresql": "npm:^7.1.14"
+    "@open-mercato/core": "workspace:*"
     "@open-mercato/events": "workspace:*"
     "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
@@ -9121,7 +9132,9 @@ __metadata:
     "@mikro-orm/core": "npm:^7.1.14"
     "@mikro-orm/decorators": "npm:^7.1.14"
     "@mikro-orm/postgresql": "npm:^7.1.14"
-    "@open-mercato/ai-assistant": "workspace:*"
+    "@open-mercato/cache": "workspace:*"
+    "@open-mercato/events": "workspace:*"
+    "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
     "@testing-library/dom": "npm:^10.4.1"
@@ -9163,11 +9176,14 @@ __metadata:
     typescript: "npm:7.0.2"
     zod: "npm:^4.6.6"
   peerDependencies:
-    "@open-mercato/ai-assistant": "workspace:*"
+    "@open-mercato/search": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
     react: ^19.0.0
     react-dom: ^19.0.0
+  peerDependenciesMeta:
+    "@open-mercato/search":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -9251,6 +9267,7 @@ __metadata:
     "@dnd-kit/sortable": "npm:^10.0.0"
     "@dnd-kit/utilities": "npm:^3.2.2"
     "@open-mercato/ai-assistant": "workspace:*"
+    "@open-mercato/cache": "workspace:*"
     "@open-mercato/core": "workspace:*"
     "@open-mercato/queue": "workspace:*"
     "@open-mercato/scheduler": "workspace:*"
@@ -9282,7 +9299,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@open-mercato/eslint-plugin-ds@workspace:packages/eslint-plugin-ds":
+"@open-mercato/eslint-plugin-ds@workspace:*, @open-mercato/eslint-plugin-ds@workspace:packages/eslint-plugin-ds":
   version: 0.0.0-use.local
   resolution: "@open-mercato/eslint-plugin-ds@workspace:packages/eslint-plugin-ds"
   dependencies:
@@ -9382,13 +9399,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@open-mercato/onboarding@workspace:packages/onboarding"
   dependencies:
+    "@open-mercato/core": "workspace:*"
+    "@open-mercato/search": "workspace:*"
     "@open-mercato/shared": "workspace:*"
+    "@open-mercato/ui": "workspace:*"
     "@types/jest": "npm:^30.0.0"
     jest: "npm:^30.4.2"
     ts-jest: "npm:^29.4.12"
     typescript: "npm:7.0.2"
   peerDependencies:
-    "@open-mercato/shared": "workspace:*"
+    react: ^19.0.0
+    react-dom: ^19.0.0
   languageName: unknown
   linkType: soft
 
@@ -9418,6 +9439,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@open-mercato/scheduler@workspace:packages/scheduler"
   dependencies:
+    "@open-mercato/core": "workspace:*"
     "@open-mercato/events": "workspace:*"
     "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
@@ -9450,6 +9472,7 @@ __metadata:
     "@ai-sdk/google": "npm:^4.0.56"
     "@ai-sdk/mistral": "npm:^4.0.16"
     "@ai-sdk/openai": "npm:^4.0.50"
+    "@open-mercato/cache": "workspace:*"
     "@types/jest": "npm:^30.0.0"
     ai: "npm:^7.0.83"
     ai-sdk-ollama: "npm:4.1.0"
@@ -9460,9 +9483,11 @@ __metadata:
     typescript: "npm:7.0.2"
     zod: "npm:^4.6.6"
   peerDependencies:
-    "@open-mercato/core": "workspace:*"
     "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
+  peerDependenciesMeta:
+    "@open-mercato/queue":
+      optional: true
   languageName: unknown
   linkType: soft
 
@@ -9473,7 +9498,6 @@ __metadata:
     "@mikro-orm/core": "npm:^7.1.14"
     "@mikro-orm/decorators": "npm:^7.1.14"
     "@mikro-orm/postgresql": "npm:^7.1.14"
-    "@open-mercato/cache": "workspace:*"
     "@types/html-to-text": "npm:^9.0.4"
     "@types/jest": "npm:^30.0.0"
     "@types/sanitize-html": "npm:^2.16.1"
@@ -9504,7 +9528,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@open-mercato/storage-s3@workspace:packages/storage-s3":
+"@open-mercato/storage-s3@workspace:*, @open-mercato/storage-s3@workspace:packages/storage-s3":
   version: 0.0.0-use.local
   resolution: "@open-mercato/storage-s3@workspace:packages/storage-s3"
   dependencies:
@@ -9530,6 +9554,7 @@ __metadata:
   resolution: "@open-mercato/sync-akeneo@workspace:packages/sync-akeneo"
   dependencies:
     "@open-mercato/core": "workspace:*"
+    "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
     "@types/jest": "npm:^30.0.0"
@@ -9709,7 +9734,6 @@ __metadata:
     "@open-mercato/shared": "workspace:*"
     react: ">=18.0.0"
     react-dom: ">=18.0.0"
-    react-is: ">=18.0.0"
   languageName: unknown
   linkType: soft
 
@@ -9879,6 +9903,7 @@ __metadata:
   dependencies:
     "@open-mercato/cache": "workspace:*"
     "@open-mercato/core": "workspace:*"
+    "@open-mercato/events": "workspace:*"
     "@open-mercato/queue": "workspace:*"
     "@open-mercato/shared": "workspace:*"
     "@open-mercato/ui": "workspace:*"
@@ -29284,6 +29309,8 @@ __metadata:
     "@mikro-orm/postgresql": "npm:^7.1.14"
     "@napi-rs/canvas": "npm:^1.0.8"
     "@next/eslint-plugin-next": "npm:^16.4.1"
+    "@open-mercato/cli": "workspace:*"
+    "@open-mercato/eslint-plugin-ds": "workspace:*"
     "@playwright/test": "npm:^1.62.0"
     "@radix-ui/react-checkbox": "npm:^1.3.11"
     "@radix-ui/react-dialog": "npm:^1.1.23"

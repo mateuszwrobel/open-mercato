@@ -79,6 +79,7 @@
     }
   },
   "devDependencies": {
+    "@open-mercato/core": "workspace:*",
     "@open-mercato/shared": "workspace:*",
     "@types/jest": "^30.0.0",
     "@types/node": "^26.4.0",

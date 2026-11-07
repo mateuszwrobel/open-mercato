@@ -120,6 +120,7 @@
     "@ai-sdk/google": "^4.0.56",
     "@ai-sdk/mistral": "^4.0.16",
     "@ai-sdk/openai": "^4.0.50",
+    "@open-mercato/cache": "workspace:*",
     "ai": "^7.0.83",
     "ai-sdk-ollama": "4.1.0",
     "meilisearch": "^0.60.0",
@@ -127,9 +128,13 @@
     "zod": "^4.6.6"
   },
   "peerDependencies": {
-    "@open-mercato/core": "workspace:*",
     "@open-mercato/queue": "workspace:*",
     "@open-mercato/shared": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@open-mercato/queue": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

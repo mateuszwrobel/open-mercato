@@ -730,6 +730,14 @@ jobs:
             turbo-${{ runner.os }}-${{ github.ref_name }}-
             turbo-${{ runner.os }}-
 
+      - name: Check package boundaries (archspec)
+        # Must run BEFORE build artifacts are downloaded: archspec adjudicates
+        # the unbuilt source graph — once packages/*/dist exists, deep subpath
+        # imports resolve into built files (excluded territory) and fail loud
+        # by design. The test self-skips when built output is present, so the
+        # later 'yarn test:scripts' run cannot enforce it.
+        run: node --test scripts/__tests__/archspec-boundaries.test.mjs
+
       - name: Download build artifacts
         uses: actions/download-artifact@v8
         with:

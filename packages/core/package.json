@@ -246,6 +246,9 @@
     "@mikro-orm/core": "^7.1.14",
     "@mikro-orm/decorators": "^7.1.14",
     "@mikro-orm/postgresql": "^7.1.14",
+    "@open-mercato/cache": "workspace:*",
+    "@open-mercato/events": "workspace:*",
+    "@open-mercato/queue": "workspace:*",
     "@types/leaflet": "^1.9.12",
     "@types/leaflet.markercluster": "^1.5.5",
     "@types/sanitize-html": "^2.13.0",
@@ -270,14 +273,18 @@
     "zod": "^4.6.6"
   },
   "peerDependencies": {
-    "@open-mercato/ai-assistant": "workspace:*",
+    "@open-mercato/search": "workspace:*",
     "@open-mercato/shared": "workspace:*",
     "@open-mercato/ui": "workspace:*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "peerDependenciesMeta": {
+    "@open-mercato/search": {
+      "optional": true
+    }
+  },
   "devDependencies": {
-    "@open-mercato/ai-assistant": "workspace:*",
     "@open-mercato/shared": "workspace:*",
     "@open-mercato/ui": "workspace:*",
     "@testing-library/dom": "^10.4.1",
