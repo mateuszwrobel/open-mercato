@@ -2,49 +2,15 @@
 
 import * as React from 'react'
 import { Spinner } from '@open-mercato/ui/primitives/spinner'
-import type { FilterOptionTone } from '@open-mercato/shared/lib/query/advanced-filter'
+import type { DealsMapCanvasProps } from './types'
 
-export type MapCenter = {
-  latitude: number
-  longitude: number
-}
-
-export type DealsMapCanvasDeal = {
-  id: string
-  latitude: number
-  longitude: number
-  tone: FilterOptionTone | null
-}
-
-export type DealsMapLegendStage = {
-  id: string
-  label: string
-  tone: FilterOptionTone | null
-}
-
-export type DealsMapPreview = {
-  id: string
-  title: string
-  companyLabel: string | null
-  locationLine: string | null
-  valueAmount: number | null
-  valueCurrency: string | null
-  probability: number | null
-  expectedCloseAt: string | null
-  stageLabel: string | null
-  stageTone: FilterOptionTone | null
-  ownerName: string | null
-}
-
-export type DealsMapCanvasProps = {
-  deals: DealsMapCanvasDeal[]
-  legendStages: DealsMapLegendStage[]
-  preview: DealsMapPreview | null
-  selectedDealId: string | null
-  onSelect: (dealId: string | null) => void
-  onCenterChange: (center: MapCenter) => void
-  className?: string
-}
+export type {
+  DealsMapCanvasDeal,
+  DealsMapCanvasProps,
+  DealsMapLegendStage,
+  DealsMapPreview,
+  MapCenter,
+} from './types'
 
 type DealsMapCanvasComponent = (props: DealsMapCanvasProps) => React.ReactElement
 

@@ -1,7 +1,7 @@
 import type { WebhookSourceConfig } from '@open-mercato/shared/lib/webhooks'
 
-const enqueueInboundDispatch = jest.fn(async () => 'job-1')
-const emitWebhooksEvent = jest.fn(async () => undefined)
+const enqueueInboundDispatch = jest.fn(async (..._args: unknown[]) => 'job-1')
+const emitWebhooksEvent = jest.fn(async (..._args: unknown[]) => undefined)
 const findWithDecryption = jest.fn()
 const credentialsResolve = jest.fn(async (_integrationId: string, _scope: { tenantId: string; organizationId: string }) => ({ webhookSigningSecret: 'whsec' }))
 

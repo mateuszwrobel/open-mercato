@@ -4,7 +4,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import test from 'node:test'
 import { fileURLToPath } from 'node:url'
-import { SYNC_FOLDERS } from '../../../../scripts/template-sync.ts'
+// Computed specifier: this repo-wide audit reads root tooling on purpose,
+// but must not become a static module edge (repo-root is not a dependency
+// target for the architecture graph; see scripts/archspec/gen-intended-spec.mjs).
+const { SYNC_FOLDERS } = await import(new URL('../../../../scripts/template-sync.ts', import.meta.url).href)
 
 // App-level locale dictionaries carry every framework string a scaffold renders —
 // `ui.*`, `appShell.*` and the app's module overrides. `packages/ui` calls them through

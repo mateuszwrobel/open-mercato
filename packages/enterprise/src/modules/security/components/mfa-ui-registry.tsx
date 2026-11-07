@@ -5,16 +5,22 @@ import { useRegisteredComponent } from '@open-mercato/ui/backend/injection/useRe
 import { buildMfaProviderComponentHandles } from '../lib/mfa-provider-interface'
 import GenericProviderSetup from './GenericProviderSetup'
 import GenericProviderVerify from './GenericProviderVerify'
-import type { MfaMethod, MfaProvider } from '../types'
-import type { MfaChallengeMethod } from './MfaChallengePanel'
+import type {
+  MfaProvider,
+  ProviderChallengeComponentProps,
+  ProviderDetailsComponentProps,
+  ProviderListComponentProps,
+  ProviderSetupComponentProps,
+} from '../types'
+
+export type {
+  ProviderChallengeComponentProps,
+  ProviderDetailsComponentProps,
+  ProviderListComponentProps,
+  ProviderSetupComponentProps,
+} from '../types'
 import GenericMfaProviderListItem from './mfa-provider-list-items/GenericMfaProviderListItem'
 import MfaProviderMethodListItem from './MfaProviderMethodListItem'
-
-export type ProviderSetupComponentProps = {
-  provider: MfaProvider
-  onComplete: (recoveryCodes: string[]) => void
-  onCancel: () => void
-}
 
 type ProviderSetupComponent = React.ComponentType<ProviderSetupComponentProps>
 
@@ -46,12 +52,6 @@ export function useProviderSetupComponent(provider: {
   )
 }
 
-export type ProviderListComponentProps = {
-  provider: MfaProvider
-  configuredCount: number
-  onClick: () => void
-}
-
 type ProviderListComponent = React.ComponentType<ProviderListComponentProps>
 
 export function useProviderListComponent(provider: MfaProvider): ProviderListComponent {
@@ -61,14 +61,6 @@ export function useProviderListComponent(provider: MfaProvider): ProviderListCom
     provider.components?.list ?? buildMfaProviderComponentHandles(provider.type).list,
     fallback,
   )
-}
-
-export type ProviderDetailsComponentProps = {
-  provider: MfaProvider
-  methods: MfaMethod[]
-  saving: boolean
-  onRemoveMethod: (method: MfaMethod) => Promise<void>
-  onMethodsChanged: () => Promise<void>
 }
 
 type ProviderDetailsComponent = React.ComponentType<ProviderDetailsComponentProps>
@@ -114,15 +106,6 @@ export function useProviderDetailsComponent(provider: MfaProvider): ProviderDeta
     provider.components?.details ?? buildMfaProviderComponentHandles(provider.type).details,
     fallback,
   )
-}
-
-export type ProviderChallengeComponentProps = {
-  method: MfaChallengeMethod
-  loading: boolean
-  onVerify: (payload: Record<string, unknown>) => Promise<void>
-  onPrepare: () => Promise<Record<string, unknown> | undefined>
-  onResend?: () => Promise<unknown>
-  submitLabel: string
 }
 
 type ProviderChallengeComponent = React.ComponentType<ProviderChallengeComponentProps>

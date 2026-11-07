@@ -19,7 +19,8 @@ import { CreateDistributionDialog } from './CreateDistributionDialog'
 import { EmbedSettingsDialog } from './EmbedSettingsDialog'
 import { RecipientsTable } from './RecipientsTable'
 
-export type DistributionMode = 'open' | 'personal'
+export type { DistributionMode } from './types'
+import type { DistributionMode } from './types'
 export type DistributionStatus = 'active' | 'paused' | 'closed'
 
 export type DistributionRow = {

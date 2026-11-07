@@ -14,7 +14,7 @@ import {
   Legend,
 } from 'recharts'
 import { ChartTooltipContent, resolveChartColor } from './ChartUtils'
-import type { LineChartProps } from './LineChart'
+import type { LineChartProps } from './types'
 
 type ImplProps = Pick<
   LineChartProps,

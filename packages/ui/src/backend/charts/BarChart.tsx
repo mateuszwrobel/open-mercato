@@ -3,25 +3,9 @@
 import * as React from 'react'
 import dynamic from 'next/dynamic'
 import { Spinner } from '@open-mercato/ui/primitives/spinner'
+import type { BarChartProps } from './types'
 
-export type BarChartDataItem = Record<string, string | number | null | undefined>
-
-export type BarChartProps = {
-  title?: string
-  data: BarChartDataItem[]
-  index: string
-  categories: string[]
-  loading?: boolean
-  error?: string | null
-  colors?: string[]
-  layout?: 'vertical' | 'horizontal'
-  valueFormatter?: (value: number) => string
-  showLegend?: boolean
-  showGridLines?: boolean
-  className?: string
-  emptyMessage?: string
-  categoryLabels?: Record<string, string>
-}
+export type { BarChartDataItem, BarChartProps } from './types'
 
 function defaultValueFormatter(value: number): string {
   if (Math.abs(value) >= 1_000_000) {

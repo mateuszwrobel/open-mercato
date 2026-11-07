@@ -1,9 +1,11 @@
 import { join } from 'node:path'
 import { Project, SyntaxKind } from 'ts-morph'
 import { buildVersionSource } from '../../../scripts/versionSource.cjs'
-import jestConfig from '../../../jest.config.cjs'
 
 const packageDir = join(__dirname, '..', '..', '..')
+// Required (not imported) so this drift guard reads the live jest config
+// without becoming a static module edge into build tooling.
+const jestConfig = require(join(packageDir, 'jest.config.cjs')) as { transform: Record<string, string> }
 
 function parse(source: string) {
   const project = new Project({ useInMemoryFileSystem: true })

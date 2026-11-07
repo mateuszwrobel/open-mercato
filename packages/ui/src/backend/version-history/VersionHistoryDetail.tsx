@@ -9,7 +9,7 @@ import {
   CollapsibleJsonSection,
   extractChangeRows,
   formatDate,
-} from '@open-mercato/core/modules/audit_logs/lib/display-helpers'
+} from './display-helpers'
 
 export type VersionHistoryDetailProps = {
   entry: VersionHistoryEntry

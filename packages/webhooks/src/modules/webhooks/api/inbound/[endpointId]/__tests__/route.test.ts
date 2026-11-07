@@ -10,7 +10,7 @@ const mockPersistedEntities: unknown[] = []
 
 const mockRouteEm = {
   create: jest.fn((_entity: unknown, data: Record<string, unknown>) => ({ ...data })),
-  persist: jest.fn((entity: unknown) => {
+  persist: jest.fn((entity: unknown): unknown => {
     mockPersistedEntities.push(entity)
     return mockRouteEm
   }),

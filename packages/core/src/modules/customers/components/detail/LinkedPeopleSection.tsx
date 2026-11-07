@@ -12,7 +12,9 @@ import {
 } from '@open-mercato/shared/lib/browser/versionedPreference'
 import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { createTranslatorWithFallback } from '@open-mercato/shared/lib/i18n/translate'
-import type { TabEmptyStateConfig, Translator } from './types'
+import type { LinkedPersonSummary, TabEmptyStateConfig, Translator } from './types'
+
+export type { LinkedPersonSummary } from './types'
 import { PersonCard } from './PersonCard'
 import {
   LinkEntityDialog,
@@ -24,22 +26,6 @@ type GuardedMutationRunner = <T>(
   operation: () => Promise<T>,
   mutationPayload?: Record<string, unknown>,
 ) => Promise<T>
-
-export type LinkedPersonSummary = {
-  id: string
-  displayName: string
-  primaryEmail?: string | null
-  primaryPhone?: string | null
-  status?: string | null
-  lifecycleStage?: string | null
-  jobTitle?: string | null
-  department?: string | null
-  createdAt?: string | null
-  organizationId?: string | null
-  temperature?: string | null
-  source?: string | null
-  linkedAt?: string | null
-}
 
 export type LinkedPeopleSortMode = 'name-asc' | 'name-desc' | 'recent'
 

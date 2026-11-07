@@ -13,7 +13,7 @@ const webhookRecord = {
 }
 
 const mockEm = {
-  fork: jest.fn(() => mockEm),
+  fork: jest.fn((): unknown => mockEm),
   flush: jest.fn(async () => undefined),
 }
 

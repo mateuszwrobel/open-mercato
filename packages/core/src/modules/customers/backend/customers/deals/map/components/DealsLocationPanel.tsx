@@ -15,8 +15,7 @@ import { useT } from '@open-mercato/shared/lib/i18n/context'
 import { translateWithFallback } from '@open-mercato/shared/lib/i18n/translate'
 import type { FilterOptionTone } from '@open-mercato/shared/lib/query/advanced-filter'
 import { formatCurrency } from '../../../../../components/detail/utils'
-import type { MapDeal, StageMeta } from './DealsMapView'
-import type { MapCenter } from './DealsMapCanvas'
+import type { MapCenter, MapDeal, StageMeta } from './types'
 
 const STAGE_BADGE_TONE_CLASS: Record<FilterOptionTone, string> = {
   success: 'bg-status-success-bg text-status-success-text',

@@ -94,6 +94,23 @@ export type EvalAssertionResultRow = {
   evaluatedAt: string | null
 }
 
+/** Shared with `AssertionFormDrawer` (type-only, erased at compile time). */
+export type AssertionRow = {
+  id: string
+  key: string
+  scorerKey: string
+  title: string
+  description: string | null
+  appliesTo: string
+  type: 'deterministic' | 'llm_judge'
+  severity: 'gate' | 'warn'
+  config: Record<string, unknown>
+  enabled: boolean
+  /** True when the row was inherited from a wildcard (`appliesTo = *`) query. */
+  wildcard: boolean
+  updatedAt: string | null
+}
+
 const SUITE_STATUSES: EvalSuiteStatusState[] = ['queued', 'running', 'completed', 'failed', 'cancelled']
 const SUITE_OUTCOMES: EvalSuiteOutcomeState[] = ['passed', 'failed', 'advisory']
 const SUITE_TRIGGERS: EvalSuiteTriggerState[] = ['manual', 'ci', 'scheduled']

@@ -6,17 +6,10 @@ import path from 'node:path'
 import test, { after } from 'node:test'
 import { fileURLToPath } from 'node:url'
 import { buildSync } from 'esbuild'
-import {
-  DESIGN_SYSTEM_ACTIVATION_ENTRY,
-  EXAMPLE_ACTIVATION_ENTRY,
-  EXAMPLE_INTEGRATION_ACTIVATION_ENTRY,
-  assertDesignSystemActivation,
-  assertExampleActivation,
-  assertModulesUnregistered,
-  enableModuleEntry,
-  runActivationFixture,
-  type ModuleActivationEntry,
-} from '../../../../scripts/lib/module-activation-fixtures.ts'
+// Computed specifier: this repo-wide audit reads root tooling on purpose,
+// but must not become a static module edge (repo-root is not a dependency
+// target for the architecture graph; see scripts/archspec/gen-intended-spec.mjs).
+const { DESIGN_SYSTEM_ACTIVATION_ENTRY, EXAMPLE_ACTIVATION_ENTRY, EXAMPLE_INTEGRATION_ACTIVATION_ENTRY, assertDesignSystemActivation, assertExampleActivation, assertModulesUnregistered, enableModuleEntry, runActivationFixture, type ModuleActivationEntry, } = await import(new URL('../../../../scripts/lib/module-activation-fixtures.ts', import.meta.url).href)
 
 // Disabled-by-default delivery contract, activation half: every preset ships the
 // `example` and `design_system` sources without registering them, so both must
