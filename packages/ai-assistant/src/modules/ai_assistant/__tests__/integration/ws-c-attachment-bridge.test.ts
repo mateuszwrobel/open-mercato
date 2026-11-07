@@ -19,8 +19,8 @@
  * (two tenants, a signer slot, a real-ish attachment row shape).
  */
 
-import type { AiChatRequestContext } from '../../lib/attachment-bridge-types'
-import type { AttachmentSigner } from '../../lib/attachment-parts'
+import type { AiChatRequestContext } from '@open-mercato/core/lib/ai/attachment-bridge-types'
+import type { AttachmentSigner } from '@open-mercato/core/lib/ai/attachment-parts'
 
 const findOneWithDecryptionMock = jest.fn()
 
@@ -53,7 +53,7 @@ jest.mock('fs', () => {
   }
 })
 
-import { resolveAttachmentParts } from '../../lib/attachment-parts'
+import { resolveAttachmentParts } from '@open-mercato/core/lib/ai/attachment-parts'
 
 jest.mock('@open-mercato/shared/lib/logger', () => {
   const mocked = {

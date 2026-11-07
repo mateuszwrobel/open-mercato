@@ -3,7 +3,7 @@ import {
   findOneWithDecryption,
 } from '@open-mercato/shared/lib/encryption/find'
 import { AiAgentMutationPolicyOverride } from '../entities'
-import type { AiAgentMutationPolicy } from '../../lib/ai-agent-definition'
+import type { AiAgentMutationPolicy } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 export interface AiAgentMutationPolicyOverrideContext {
   tenantId: string

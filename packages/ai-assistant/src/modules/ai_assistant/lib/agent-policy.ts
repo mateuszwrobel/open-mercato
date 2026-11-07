@@ -6,8 +6,8 @@ import type {
   AiAgentAcceptedMediaType,
   AiAgentDefinition,
   AiAgentMutationPolicy,
-} from './ai-agent-definition'
-import type { AiToolDefinition } from './types'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 const logger = createLogger('ai_assistant')
 

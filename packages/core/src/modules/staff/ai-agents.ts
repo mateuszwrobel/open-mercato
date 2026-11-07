@@ -16,7 +16,7 @@
  * The prompt is a structured `PromptTemplate` with the seven named sections the
  * override system addresses by name.
  */
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 type PromptSectionName =
   | 'role'

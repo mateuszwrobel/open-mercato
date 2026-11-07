@@ -29,8 +29,8 @@ import {
   resetAgentRegistryForTests,
   seedAgentRegistryForTests,
 } from '../agent-registry'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import { z } from 'zod'
 
 jest.mock('@open-mercato/shared/lib/logger', () => {

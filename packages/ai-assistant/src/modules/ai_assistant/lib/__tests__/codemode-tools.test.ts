@@ -1,4 +1,4 @@
-import type { McpToolContext } from '../types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { getApiEndpoints } from '../api-endpoint-index'
 import { fetchWithTimeout } from '@open-mercato/shared/lib/http/fetchWithTimeout'
 import {

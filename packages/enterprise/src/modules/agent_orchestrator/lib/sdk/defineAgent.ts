@@ -2,7 +2,7 @@
 import {
   defineAiAgent,
   type AiAgentDefinition,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type { ZodTypeAny } from 'zod'
 import { createLogger } from '@open-mercato/shared/lib/logger'
 import type { AgentType } from '../../data/validators'

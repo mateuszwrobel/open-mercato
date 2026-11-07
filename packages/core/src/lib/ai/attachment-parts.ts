@@ -6,7 +6,7 @@ import { findOneWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import type {
   AiAgentAcceptedMediaType,
   AiAgentDefinition,
-} from './ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 import type {
   AiChatRequestContext,
   AiResolvedAttachmentPart,

@@ -1,5 +1,5 @@
 import type { AwilixContainer } from 'awilix'
-import type { McpClientInterface } from './types'
+import type { McpClientInterface } from '@open-mercato/core/lib/ai/types'
 
 /**
  * Client connection mode.

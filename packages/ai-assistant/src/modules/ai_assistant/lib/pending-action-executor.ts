@@ -23,8 +23,8 @@ import { AiPendingActionRepository } from '../data/repositories/AiPendingActionR
 import type { AiPendingAction } from '../data/entities'
 import { emitAiAssistantEvent } from '../events'
 import type { AiActionConfirmedPayload } from '../events'
-import type { AiAgentDefinition } from './ai-agent-definition'
-import type { AiToolDefinition, McpToolContext } from './types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import { hasRequiredFeatures } from './auth'
 import { resolveToolFeaturesDeniedMessage } from './pending-action-messages'
 import type {

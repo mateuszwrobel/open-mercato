@@ -27,7 +27,7 @@
  * Requires `yarn generate` to be discovered; until then the runtime answers
  * `agent_unknown` and the Studio reports that AI authoring is unavailable.
  */
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
 import {
   WORKFLOW_DRAFT_AGENT_ID,
   workflowDraftGenerationSchema,

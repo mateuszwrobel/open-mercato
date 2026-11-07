@@ -1,4 +1,4 @@
-import type { McpToolContext } from './types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 
 /**
  * Tenant/org scope for outgoing api.request() calls is derived strictly from the

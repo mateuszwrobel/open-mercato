@@ -12,7 +12,7 @@ import {
   createAiApiOperationRunner,
   type AiApiOperationRequest,
   type AiToolExecutionContext,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner'
+} from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import { findOneWithDecryption, findWithDecryption } from '@open-mercato/shared/lib/encryption/find'
 import { authorizeFeatures } from '@open-mercato/shared/security/featurePolicy'
 import { TERMINAL_INTERACTION_STATUS_LIST } from '../lib/interactionStatus'

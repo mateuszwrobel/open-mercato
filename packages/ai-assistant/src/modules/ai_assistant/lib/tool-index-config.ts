@@ -3,7 +3,7 @@ import type {
   SearchResultPresenter,
   IndexableRecord,
 } from '@open-mercato/search/types'
-import type { McpToolDefinition } from './types'
+import type { McpToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 /**
  * Entity ID for MCP tools in the search index.

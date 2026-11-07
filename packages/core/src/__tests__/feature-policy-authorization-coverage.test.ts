@@ -28,7 +28,7 @@ const lowLevelMatcherAllowlist = new Set([
   // Grant-management validation compares proposed role grants, not a live subject.
   'packages/core/src/modules/auth/lib/grantChecks.ts',
   // Static tool-route contract validation, not a user authorization decision.
-  'packages/ai-assistant/src/modules/ai_assistant/lib/ai-api-operation-runner.ts',
+  'packages/core/src/lib/ai/ai-api-operation-runner.ts',
 
   // --- Grant/requirement computation over a proposed or resolved grant array,
   // the same shape as `auth/lib/grantChecks.ts` above: none of these gates a

@@ -5,8 +5,8 @@ import {
   PENDING_ACTION_CONFIRMED_EVENT_ID,
 } from '../pending-action-executor'
 import type { AiActionConfirmedPayload } from '../../events'
-import type { AiAgentDefinition } from '../ai-agent-definition'
-import type { AiToolDefinition } from '../types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import type { AiPendingAction } from '../../data/entities'
 import { AiPendingActionRepository } from '../../data/repositories/AiPendingActionRepository'
 import { registerModules } from '@open-mercato/shared/lib/modules/registry'

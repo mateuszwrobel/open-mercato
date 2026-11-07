@@ -10,7 +10,7 @@ import { getToolRegistry } from './tool-registry'
 import { executeTool } from './tool-executor'
 import { loadAllModuleTools, indexToolsForSearch } from './tool-loader'
 import { authenticateMcpRequest, hasRequiredFeatures } from './auth'
-import type { McpServerOptions, McpToolContext } from './types'
+import type { McpServerOptions, McpToolContext } from '@open-mercato/core/lib/ai/types'
 import type { SearchService } from '@open-mercato/search/service'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'
 

@@ -8,7 +8,7 @@ import { executeTool } from '../../../lib/tool-executor'
 import { loadAllModuleTools } from '../../../lib/tool-loader'
 import { getToolRegistry } from '../../../lib/tool-registry'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'
-import type { AiToolDefinition, McpToolContext } from '../../../lib/types'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 
 const logger = createLogger('ai_assistant')
 

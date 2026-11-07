@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { createAiApiOperationRunner, normalizePath, type AiToolExecutionContext } from '../ai-api-operation-runner'
+import { createAiApiOperationRunner, normalizePath, type AiToolExecutionContext } from '@open-mercato/core/lib/ai/ai-api-operation-runner'
 import type { ApiRouteManifestEntry } from '@open-mercato/shared/modules/registry'
 import { registerApiInterceptors } from '@open-mercato/shared/lib/crud/interceptor-registry'
 import {
@@ -12,7 +12,7 @@ import {
   resolveAuthFromRequestDetailed,
   type AuthContext,
 } from '@open-mercato/shared/lib/auth/server'
-import type { AiToolDefinition, McpToolContext } from '../types'
+import type { AiToolDefinition, McpToolContext } from '@open-mercato/core/lib/ai/types'
 
 type CapturedHandlerCall = {
   request: Request

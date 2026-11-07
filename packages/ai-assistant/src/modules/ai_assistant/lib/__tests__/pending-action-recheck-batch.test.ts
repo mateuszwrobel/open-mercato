@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import type { AwilixContainer } from 'awilix'
 import { checkRecordVersion, type PendingActionAuthContext } from '../pending-action-recheck'
-import type { AiToolDefinition } from '../types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import type { AiPendingAction } from '../../data/entities'
 
 jest.mock('@open-mercato/shared/lib/encryption/find', () => ({

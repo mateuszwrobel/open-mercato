@@ -2,7 +2,7 @@ import { createServer, type IncomingHttpHeaders, type Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
 import { getApiEndpoints, type ApiEndpoint } from '../api-endpoint-index'
 import { createApiRequestFn } from '../codemode-tools'
-import type { McpToolContext } from '../types'
+import type { McpToolContext } from '@open-mercato/core/lib/ai/types'
 
 jest.mock('../api-endpoint-index', () => ({
   getApiEndpoints: jest.fn(),

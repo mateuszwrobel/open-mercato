@@ -1,5 +1,5 @@
 import { createLogger } from '@open-mercato/shared/lib/logger'
-import type { McpToolContext, ToolExecutionResult } from './types'
+import type { McpToolContext, ToolExecutionResult } from '@open-mercato/core/lib/ai/types'
 import { getToolRegistry } from './tool-registry'
 import { hasRequiredFeatures } from './auth'
 import type { RbacService } from '@open-mercato/core/modules/auth/services/rbacService'

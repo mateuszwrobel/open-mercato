@@ -55,10 +55,10 @@ jest.mock('@open-mercato/shared/lib/crud/custom-fields', () => ({
 }))
 
 jest.mock(
-  '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner',
+  '@open-mercato/core/lib/ai/ai-api-operation-runner',
   () => {
     const actual = jest.requireActual(
-      '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner',
+      '@open-mercato/core/lib/ai/ai-api-operation-runner',
     )
     return {
       ...actual,

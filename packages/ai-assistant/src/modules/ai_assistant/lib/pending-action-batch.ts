@@ -16,7 +16,7 @@
 import { resolveTranslations } from '@open-mercato/shared/lib/i18n/server'
 import type { AiPendingAction } from '../data/entities'
 import type { AiPendingActionFailedRecord } from './pending-action-types'
-import type { AiToolDefinition } from './types'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 
 export const PENDING_RECORD_NOT_PREVIEWED_CODE = 'record_not_previewed'
 export const PENDING_RECORD_DUPLICATE_DROPPED_CODE = 'record_duplicate_dropped'

@@ -36,6 +36,10 @@
       "types": "./src/helpers/integration/*.ts",
       "default": "./dist/helpers/integration/*.js"
     },
+    "./lib/ai/*": {
+      "types": "./src/lib/ai/*.ts",
+      "default": "./dist/lib/ai/*.js"
+    },
     "./modules/customers": {
       "types": "./src/modules/customers/index.ts",
       "default": "./dist/modules/customers/index.js"

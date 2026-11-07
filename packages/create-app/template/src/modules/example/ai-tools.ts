@@ -28,12 +28,12 @@
  */
 import { z } from 'zod'
 import type { EntityManager } from '@mikro-orm/postgresql'
-import { defineAiTool } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-tool-definition'
+import { defineAiTool } from '@open-mercato/core/lib/ai/ai-tool-definition'
 import type { AiToolOverridesMap } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-overrides'
 import type {
   AiToolDefinition,
   McpToolContext,
-} from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+} from '@open-mercato/core/lib/ai/types'
 import { EXAMPLE_TODO_SUMMARY_SERVICE } from './di'
 import type { TodoSummaryService } from './lib/todoSummaryCache'
 import { ExampleCustomerPriority } from './data/entities'

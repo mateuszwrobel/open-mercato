@@ -17,7 +17,7 @@ import type { AiAgentMutationPolicyOverride } from '../../../../../data/entities
 import type {
   AiAgentDefinition,
   AiAgentMutationPolicy,
-} from '../../../../../lib/ai-agent-definition'
+} from '@open-mercato/core/lib/ai/ai-agent-definition'
 
 const logger = createLogger('ai_assistant')
 

@@ -34,8 +34,8 @@ import {
   resetProgrammaticOverridesForTests,
 } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-overrides'
 import { createLogger } from '@open-mercato/shared/lib/logger'
-import type { AiAgentDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-agent-definition'
-import type { AiToolDefinition } from '@open-mercato/ai-assistant/modules/ai_assistant/lib/types'
+import type { AiAgentDefinition } from '@open-mercato/core/lib/ai/ai-agent-definition'
+import type { AiToolDefinition } from '@open-mercato/core/lib/ai/types'
 import aclFeatures from '../acl'
 import aiTools, { TODO_SUMMARY_OVERRIDE_FEATURE, aiToolOverrides } from '../ai-tools'
 import aiAgents, { TODO_ASSISTANT_OVERRIDE_FEATURE, aiAgentOverrides } from '../ai-agents'

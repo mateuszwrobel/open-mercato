@@ -13,8 +13,8 @@ jest.mock('@open-mercato/shared/lib/crud/custom-fields', () => ({
   loadCustomFieldDefinitionIndex: jest.fn(),
 }))
 
-jest.mock('@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner', () => {
-  const actual = jest.requireActual('@open-mercato/ai-assistant/modules/ai_assistant/lib/ai-api-operation-runner')
+jest.mock('@open-mercato/core/lib/ai/ai-api-operation-runner', () => {
+  const actual = jest.requireActual('@open-mercato/core/lib/ai/ai-api-operation-runner')
   return {
     ...actual,
     createAiApiOperationRunner: (...args: unknown[]) => createRunnerMock(...args),
